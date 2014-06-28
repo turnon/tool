@@ -2,6 +2,6 @@
 
 cat ~/.bash_history >> hist.txt
 
-sort  hist.txt | uniq -c > hist.$$
+sort -u hist.txt > hist.$$
 
 mv hist.$$ hist.txt
