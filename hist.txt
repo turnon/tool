@@ -1,0 +1,507 @@
+ chg.sh1 
+> a.txt
+> a.txt << EOF
+> b.txt
+> somthing
+> tobeclean
+cat ./.git/FETCH_HEAD 
+cat .git/refs/heads/master 
+cat .git/refs/heads/somefea 
+cat << EOF >somthing
+cat > a.txt 
+cat > a.txt <<EOF 
+cat a
+cat a.txt 
+cat a.txt <<EOF
+cat bookmarks_14-6-16.html 
+cat chgd.sh 
+cat hist.txt 
+cat hist.txt 
+cat somthing 
+cat somthing.txt 
+cat somthing.txt 
+cat ~/.bash_history 
+cd '第一次公开课视频和资料(9月7日)'
+cd ..
+cd ../
+cd ../favo
+cd ../favo/
+cd ../favo1
+cd ../noname/
+cd ../test/
+cd ../trygit
+cd ../trygit/
+cd ../trygit2
+cd /c
+cd /c/DISK-D/trygit
+cd /c/DISK-D/trygit/
+cd /c/DISK-D/trygit/
+cd /i
+cd /i/bak-i/favo
+cd /i/bak-i/favo/
+cd /i/bak-i/test/
+cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/
+cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/第一次公开课视频和资料(9月7日)
+cd /w/oth-v/
+cd /w/oth-v/true detetive
+cd bak-i/
+cd favo
+cd favo/
+cd noname/
+cd test/
+cd true\ detetive/
+cd trygit2
+chg.sh1 
+chgd.sh 
+clear
+clear
+cp * ../
+cp --help
+cp -R ../favo1/.git ./
+cp -R favo favo1
+cp ../favo ../favo1
+cp ../favo1/,git ./
+cp ../favo1/.git ./
+cp ./favo favo1
+cp chg.sh1 ../favo
+cp chgd.sh chg.sh1
+cp favo favo1
+cp h* test/
+cut --help
+date
+date +%y%m%d
+date +%y%m%d%H%M%S >> somthing.txt 
+date --date='1 days ago'
+date --date='14-6-16'
+date --date='14-6-18'\
+date --date='14-6-26 3 days ago' 
+date --date='14-6-26 4 days ago'
+date --date='14-6-26 4 days ago' 
+date --date='14-6-26 4 days ago' +%w
+date --date='14-6-26 last MON'
+date --date='14-6-26 last SUN'
+date --date='14-6-26' +%D
+date --date='14-6-26' +%d
+date --date='14-6-26' +%w
+date --date='14-6-28' +%w
+date --date='14-6-29 -7 days ago'
+date --date='14-6-29 6 days ago'
+date --date='14-6-29 7 days ago'
+date --date='14-6-29' +%w
+date --date='2014 06 16'
+date --date='2014- 06- 16'
+date --date='2014-06-16'
+date --date='last MON '
+date --date='last MON befor 14-6-18'
+date --date='last MON before 14-6-18'
+date --date='one day before 14-6-18'
+date --date='one days ago'
+date --help
+date -s '14-6-18' -d 'last MON'
+date -s 'last MON'
+date -s 14-6-23
+date -s last MON
+df
+df --help
+diff bookmarks_14-6-23.html bookmarks_14-6-22.html
+diff hist.txt  ./hist.txt 
+du *
+du *.7z
+du --help
+du -s
+du -s *.7z
+du -s .
+du -s trygit
+du -s trygit trygit2
+du -s trygit2
+du .
+echo $$
+echo $$
+echo $HISTSIZE
+echo a
+env
+env
+env |sort
+exit
+exit
+expr --help
+fit add somthing.txt 
+fit diff
+git  remote
+git  remote -v
+git  status
+git ../trygit
+git /i/bak-i/test/
+git add 
+git add *
+git add -A
+git add -a
+git add a.txt
+git add chg.sh1
+git add chgd.sh
+git add hist.txt
+git add hist.txt
+git add somthing
+git add somthing.txt
+git add somthing.txt
+git alias
+git blame bookmarks_14-6-16.html
+git blame chgd.sh
+git brach -d master
+git brach -d master
+git branch
+git branch
+git branch 
+git branch 
+git branch -D fea
+git branch -D fea
+git branch -D master
+git branch -D master
+git branch -D master 
+git branch -a
+git branch -d master
+git branch -d master
+git branch -d somefea 
+git branch -d somefea2
+git branch -d somefea2
+git branch -d somefea3onfea2 
+git branch -d somefea3onfea2 
+git branch -r master
+git branch fea
+git branch fea
+git branch master
+git branch master
+git branch master 
+git branch somefea
+git branch somefea2
+git branch somefea3onfea2
+git branch tmp 
+git branch tryf3
+git branch tryf4
+git check out
+git checkout
+git checkout -- a.txt
+git checkout -b somefea2
+git checkout fea
+git checkout fea
+git checkout fea 
+git checkout fea]
+git checkout master
+git checkout master
+git checkout master 
+git checkout master 
+git checkout somefea2
+git checkout somefea2
+git checkout somefea2 
+git checkout somefea3onfea2 
+git checkout somefea3onfea2 
+git checkout somthing.txt
+git checkout t
+git checkout tmp
+git checkout tryf3
+git checkout tryf3 
+git checkout tryf4
+git cherry
+git cherry -v fea
+git chgd.sh
+git clean
+git clean
+git clean -f
+git clean -f
+git clone file:///c/DISK-D/trygit
+git clone file:///c/DISK-D/trygit ../trygit2
+git clone file:///c/DISK-D/trygit trygit2
+git clone https://github.com/turnon/favo.git
+git clone https://github.com/turnon/favo.git ./favo
+git clone https://github.com/turnon/noname.git 
+git comfig --global use.name 'k'
+git commit
+git commit
+git commit 
+git commit 
+git commit  a.txt
+git commit  somthing.txt
+git commit --amend
+git commit -a hist.txt
+git commit -a hist.txt
+git commit -v
+git commit a.txt
+git commit chgd.sh
+git commit hist.txt
+git commit hist.txt
+git commit somthing.txt
+git commit somthing.txt
+git config
+git config --global use.email 'k@k.com'
+git config --global use.name 'k'
+git config --global user.email "ken@home.com"
+git config --global user.email 'z@z-PC.com'
+git config --global user.name "ken"
+git config --global user.name 'z'
+git config -l
+git config user.email 'l@l.com'
+git config user.name 'l'
+git diff
+git diff
+git diff a
+git diff a.txt
+git diff a950d3b 870efc7
+git diff bookmarks_14-6-23.html bookmarks_14-6-22.html
+git diff fea 
+git diff master 
+git diff master master 
+git diff master tmp 
+git diff somthing.txt
+git diff tmp
+git diff tryf3
+git fetch
+git fetch --all
+git fetch -all
+git fetch a
+git fetch noname 
+git fetch origin 
+git fetch origin  master :master 
+git fetch origin  tryf3:master 
+git fetch origin  tryf4:master 
+git fetch origin  tryf4:tryf3
+git fetch origin fea
+git fetch origin fea:fea
+git fetch origin master
+git fetch origin master:master 
+git fetch origin master:tmp
+git fetch origin tryf3:master 
+git fetch origin tryf3:tryf3
+git fetch origin tryf4:master 
+git fetch origin tryf4:tmp
+git help 
+git help add
+git help add
+git help cd
+git help checkout
+git help clean
+git help commit
+git help commit
+git help diff
+git help diff
+git help du
+git help fetch
+git help gitk
+git help index
+git help log
+git help merge
+git help merge
+git help reflog
+git help remote
+git help reset
+git help revert
+git help script
+git https://github.com/turnon/noname.git 
+git init
+git init
+git log
+git log
+git log  --graph
+git log --graph
+git log --graph --oneline
+git log --one-line
+git log --oneline
+git log --oneline
+git log --oneline --graph
+git log --oneline | sort
+git log --oneline | sort
+git log --onrline
+git log --stat
+git log -stat
+git merge --abort
+git merge --abort
+git merge --squash fea
+git merge fea
+git merge fea
+git merge fea master
+git merge fea master
+git merge master fea
+git merge master fea
+git merge master fea 
+git merge master fea 
+git merge somefea2
+git merge somefea2
+git merge somefea3onfea2 
+git merge somefea3onfea2 
+git merge tmp
+git mergetool
+git mergetool
+git pull origin fea:master
+git pull origin master 
+git push noname 
+git push origin  :tryf4
+git push origin master:master
+git push origin master:master 
+git rabase --continue
+git rabase --continue
+git rebase --abort
+git rebase --abort
+git rebase --continue
+git rebase --continue
+git rebase -continue
+git rebase -continue
+git rebase master
+git rebase master
+git reflog
+git remote
+git remote -a
+git remote -b
+git remote -v
+git remote rename origin noname
+git remote show origin 
+git reset --hard
+git reset --hard HEAD
+git reset HEAD
+git reset HEAD~1
+git reset HEAD~2
+git revert --abort
+git revert -abort
+git revert 1e920f7
+git revert 71e
+git revert 71e192e
+git revert 71e192e2d
+git revert b0cba2c
+git rm --cached somthing
+git rm chg.sh1
+git status
+git status
+git status 
+git status 
+git status --oneline
+git status --online
+git svn
+git tag
+gitk
+gitk
+got log
+grep 'hist' hist.txt 
+grep 'hist' hist.txt 
+hist.sh 
+history
+history
+history 
+history --help
+history -w
+history | awk '{print $2}'
+history | awk '{print $2}'
+history | awk '{print $2}' | sort -u > hist.txt
+history | awk '{print $2}' | sort -u > hist.txt
+history | cut -c8- 
+history | cut -c8- 
+history | cut -c8- >> hist.txt 
+history | cut -c8- >> hist.txt 
+history | cut -c8- | sort -u > hist.txt
+history | cut -c8- | sort -u > hist.txt
+history | cut -c8- | sort -u >> hist.txt
+history | cut -c8- | sort -u >> hist.txt
+history | cut -f2- 
+history | cut -f2- 
+history | head -n10
+history | tail -n10
+history | tail -n15 >> chgd.sh 
+hitsory -w
+jobs
+ll
+ll
+ll ..
+ls
+ls
+ls *.7z |  du -s
+ls *.7z |  du -sh
+ls *.7z |  xargs du -ch
+ls *.7z |  xargs du -sh
+ls *.7z | xargs du -s
+ls --full-time
+ls --full-time |  ;
+ls --full-time | awk '{ print $9  }'
+ls --full-time | cut -f9
+ls --fuul-time
+ls --help
+ls -A
+ls -a
+ls -al
+ls -al
+ls -alc
+ls -l
+ls ..
+ls ^t
+ls ^t* 
+ls b*
+ls b* | cut -d_ -f1
+ls b* | cut -d_ -f2
+ls t
+ls t*
+ls t* 
+ls t* -d
+ls t* -d |  du -s
+ls t* -d |  xargs du -s
+ls t* -d | du -s
+ls t* -d | xargs du -s
+ls t* | du
+ls t* | du -c
+ls t* | du -d
+ls t* | du -s
+ls | cut -d_ -f1
+ls | cut -d_ -f2
+man du
+mkdir --help
+mkdir bak-i/favo
+mkdir test
+mv a.txt a.sh
+mv b.txt a.txt 
+mv chg.sh1 chgd.sh 
+mv hist.tmp hist.txt 
+mv somthing somthing.txt
+ps
+ps
+ps -elf
+ps -elf
+pwd
+pwd
+rm -df .git
+rm -df trygit2
+rm -f ?*
+rm -f a.txt 
+rm -f somthing.txt 
+rm -f trygit2
+rm -rf .git
+rm -rf favo
+rm -rf trygit2
+rm somthing.txt 
+script
+set
+set
+set +x
+set --help
+set -x
+sh chg.sh1
+sh hist.sh 
+sleep 10 &
+sleep 5 &
+sleep 5 &
+sleep 50 &
+sleep 60 &
+sort -u hist.txt 
+sort -u hist.txt 
+sort -u hist.txt  > hist.txt 
+sort -u hist.txt  > hist.txt 
+sort -u hist.txt > hist.tmp
+sync
+vi a.txt 
+vi chg.sh1
+vi chg.sh1 
+vi chgd.sh 
+vi hist.sh
+vi hist.sh 
+vi somthing.txt 
+vi somthing.txt 
+vo a.txt 
+watch cat chgd.sh 
+wc -l hist.txt 
+wc -l hist.txt 
+while true do cat chgd.sh done; 
+while true do cat chgd.sh done;  l
