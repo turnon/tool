@@ -1,4 +1,6 @@
  chg.sh1 
+../tool/chgd.sh .
+../tool/dif.sh 
 > a.txt
 > a.txt << EOF
 > b.txt
@@ -15,24 +17,32 @@ cat a.txt
 cat a.txt <<EOF
 cat bookmarks_14-6-16.html 
 cat chgd.sh 
+cat hist.sh 
 cat hist.txt 
 cat hist.txt 
+cat hist.txt | cut -f2
+cat hist.txt | cut -f2 | sort -u > hist.$$
 cat somthing 
 cat somthing.txt 
 cat somthing.txt 
 cat txt
 cat ~/.bash_history 
 cd '第一次公开课视频和资料(9月7日)'
+cd .
 cd ..
 cd ../
 cd ../favo
 cd ../favo/
 cd ../favo1
+cd ../hmfv/
 cd ../noname/
 cd ../test/
+cd ../tool
+cd ../tool/
 cd ../trygit
 cd ../trygit/
 cd ../trygit2
+cd ../wkfv/
 cd /c
 cd /c/DISK-D/trygit
 cd /c/DISK-D/trygit/
@@ -42,6 +52,7 @@ cd /i/bak-i
 cd /i/bak-i/favo
 cd /i/bak-i/favo/
 cd /i/bak-i/test/
+cd /i/bak-i/trygit/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/第一次公开课视频和资料(9月7日)
 cd /w/oth-v/
@@ -51,11 +62,14 @@ cd favo
 cd favo/
 cd noname/
 cd test/
+cd tool/
 cd true\ detetive/
 cd trygit2
 cd wkfv
 chg.sh1 
 chgd.sh 
+chgd.sh ../hmfv
+chgd.sh ../hmfv/
 clear
 clear
 cp * ../
@@ -122,6 +136,7 @@ du .
 echo $$
 echo $$
 echo $HISTSIZE
+echo $dir
 echo a
 env
 env
@@ -143,6 +158,7 @@ git add -a
 git add a.txt
 git add chg.sh1
 git add chgd.sh
+git add dif.sh
 git add hist.txt
 git add hist.txt
 git add somthing
@@ -170,6 +186,7 @@ git branch -d somefea2
 git branch -d somefea2
 git branch -d somefea3onfea2 
 git branch -d somefea3onfea2 
+git branch -m master
 git branch -r master
 git branch fea
 git branch fea
@@ -179,6 +196,7 @@ git branch master
 git branch somefea
 git branch somefea2
 git branch somefea3onfea2
+git branch tmp
 git branch tmp 
 git branch tryf3
 git branch tryf4
@@ -186,6 +204,7 @@ git check out
 git checkout
 git checkout -- a.txt
 git checkout -b somefea2
+git checkout 20cceed
 git checkout fea
 git checkout fea
 git checkout fea 
@@ -218,6 +237,7 @@ git clone file:///c/DISK-D/trygit trygit2
 git clone https://github.com/turnon/favo.git
 git clone https://github.com/turnon/favo.git ./favo
 git clone https://github.com/turnon/noname.git 
+git clone https://github.com/turnon/tool.git
 git clone https://github.com/turnon/wkfv.git
 git comfig --global use.name 'k'
 git commit
@@ -237,6 +257,8 @@ git commit hist.txt
 git commit somthing.txt
 git commit somthing.txt
 git config
+git config --gloabal
+git config --gloabal -l
 git config --global use.email 'k@k.com'
 git config --global use.name 'k'
 git config --global user.email "ken@home.com"
@@ -245,6 +267,7 @@ git config --global user.email 'z@z-PC.com'
 git config --global user.name "ken"
 git config --global user.name 'k'
 git config --global user.name 'z'
+git config --global user.name='k'
 git config -l
 git config user.email 'l@l.com'
 git config user.name 'l'
@@ -283,6 +306,7 @@ git fetch origin tryf4:tmp
 git help 
 git help add
 git help add
+git help branch
 git help cd
 git help checkout
 git help clean
@@ -300,6 +324,7 @@ git help merge
 git help reflog
 git help remote
 git help reset
+git help revert
 git help revert
 git help script
 git https://github.com/turnon/noname.git 
@@ -355,6 +380,7 @@ git rebase master
 git rebase master
 git reflog
 git remote
+git remote 
 git remote -a
 git remote -b
 git remote -v
@@ -365,14 +391,19 @@ git reset --hard HEAD
 git reset HEAD
 git reset HEAD~1
 git reset HEAD~2
+git reset HEAD~2
+git revert --abort
 git revert --abort
 git revert -abort
 git revert 1e920f7
 git revert 71e
 git revert 71e192e
 git revert 71e192e2d
+git revert HEAD~1
+git revert HEAD~2
 git revert b0cba2c
 git rm --cached somthing
+git rm bm.html
 git rm chg.sh1
 git status
 git status
@@ -384,6 +415,7 @@ git svn
 git tag
 gitk
 gitk
+gitk ../hmfv/
 got log
 grep 'hist' hist.txt 
 grep 'hist' hist.txt 
@@ -409,6 +441,7 @@ history | cut -c8- | sort -u >> hist.txt
 history | cut -f2- 
 history | cut -f2- 
 history | head -n10
+history | sort | uniq -c
 history | tail -n10
 history | tail -n15 >> chgd.sh 
 hitsory -w
@@ -466,6 +499,7 @@ mv . ../wkfvtmp
 mv a.txt a.sh
 mv b.txt a.txt 
 mv chg.sh1 chgd.sh 
+mv hist.3660  hist.txt 
 mv hist.tmp hist.txt 
 mv somthing somthing.txt
 mv test test.sh
