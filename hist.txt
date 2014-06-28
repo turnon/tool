@@ -20,6 +20,7 @@ cat hist.txt
 cat somthing 
 cat somthing.txt 
 cat somthing.txt 
+cat txt
 cat ~/.bash_history 
 cd '第一次公开课视频和资料(9月7日)'
 cd ..
@@ -37,6 +38,7 @@ cd /c/DISK-D/trygit
 cd /c/DISK-D/trygit/
 cd /c/DISK-D/trygit/
 cd /i
+cd /i/bak-i
 cd /i/bak-i/favo
 cd /i/bak-i/favo/
 cd /i/bak-i/test/
@@ -51,6 +53,7 @@ cd noname/
 cd test/
 cd true\ detetive/
 cd trygit2
+cd wkfv
 chg.sh1 
 chgd.sh 
 clear
@@ -103,6 +106,7 @@ date -s 14-6-23
 date -s last MON
 df
 df --help
+dif.sh 
 diff bookmarks_14-6-23.html bookmarks_14-6-22.html
 diff hist.txt  ./hist.txt 
 du *
@@ -214,6 +218,7 @@ git clone file:///c/DISK-D/trygit trygit2
 git clone https://github.com/turnon/favo.git
 git clone https://github.com/turnon/favo.git ./favo
 git clone https://github.com/turnon/noname.git 
+git clone https://github.com/turnon/wkfv.git
 git comfig --global use.name 'k'
 git commit
 git commit
@@ -235,8 +240,10 @@ git config
 git config --global use.email 'k@k.com'
 git config --global use.name 'k'
 git config --global user.email "ken@home.com"
+git config --global user.email 'k@wh.com'
 git config --global user.email 'z@z-PC.com'
 git config --global user.name "ken"
+git config --global user.name 'k'
 git config --global user.name 'z'
 git config -l
 git config user.email 'l@l.com'
@@ -380,6 +387,7 @@ gitk
 got log
 grep 'hist' hist.txt 
 grep 'hist' hist.txt 
+gtk
 hist.sh 
 history
 history
@@ -425,6 +433,7 @@ ls -A
 ls -a
 ls -al
 ls -al
+ls -al ../favo1
 ls -alc
 ls -l
 ls ..
@@ -451,11 +460,17 @@ man du
 mkdir --help
 mkdir bak-i/favo
 mkdir test
+mkdir wkfv
+mv --help
+mv . ../wkfvtmp
 mv a.txt a.sh
 mv b.txt a.txt 
 mv chg.sh1 chgd.sh 
 mv hist.tmp hist.txt 
 mv somthing somthing.txt
+mv test test.sh
+mv wkfv wkfvtmp
+mv wkfvtmp/wkfv ./wkfv
 ps
 ps
 ps -elf
@@ -471,6 +486,7 @@ rm -f trygit2
 rm -rf .git
 rm -rf favo
 rm -rf trygit2
+rm -rf wkfvtmp
 rm somthing.txt 
 script
 set
@@ -491,6 +507,8 @@ sort -u hist.txt  > hist.txt
 sort -u hist.txt  > hist.txt 
 sort -u hist.txt > hist.tmp
 sync
+test txt
+test.sh txt
 vi a.txt 
 vi chg.sh1
 vi chg.sh1 
@@ -499,6 +517,9 @@ vi hist.sh
 vi hist.sh 
 vi somthing.txt 
 vi somthing.txt 
+vi test
+vi test.sh 
+vi txt
 vo a.txt 
 watch cat chgd.sh 
 wc -l hist.txt 
