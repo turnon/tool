@@ -8,8 +8,8 @@ other=$(echo $bmlog | cut -d' ' -f2- )
 for nex in $other
 do
 git diff $pre $nex | grep 'HREF' > difdetail.$$
-rsub=$(grep '^[-]' difdetail.$$ | wc -l )
-radd=$(grep '^[+]' difdetail.$$ | wc -l )
+rsub=$(grep -c '^[-]' difdetail.$$ )
+radd=$(grep -c '^[+]' difdetail.$$ )
 echo $(date --date=$(git log $nex --oneline | head -n1 | awk '{print $2}' ) +%y%m%d ) $rsub $radd
 pre=$nex
 done
