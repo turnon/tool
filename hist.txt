@@ -1,4 +1,5 @@
  chg.sh1 
+( var=abc )
 ../tool/chgd.sh .
 ../tool/dif.sh 
 > a.txt
@@ -6,6 +7,7 @@
 > b.txt
 > somthing
 > tobeclean
+and --help
 cat ./.git/FETCH_HEAD 
 cat .git/refs/heads/master 
 cat .git/refs/heads/somefea 
@@ -17,6 +19,7 @@ cat a.txt
 cat a.txt <<EOF
 cat bookmarks_14-6-16.html 
 cat chgd.sh 
+cat dif.sh -
 cat hist.sh 
 cat hist.txt 
 cat hist.txt 
@@ -44,20 +47,24 @@ cd ../trygit/
 cd ../trygit2
 cd ../wkfv/
 cd /c
+cd /c
 cd /c/DISK-D/trygit
 cd /c/DISK-D/trygit/
 cd /c/DISK-D/trygit/
 cd /i
 cd /i/bak-i
+cd /i/bak-i/
 cd /i/bak-i/favo
 cd /i/bak-i/favo/
 cd /i/bak-i/test/
+cd /i/bak-i/tool/
 cd /i/bak-i/trygit/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/第一次公开课视频和资料(9月7日)
 cd /w/oth-v/
 cd /w/oth-v/true detetive
 cd bak-i/
+cd c
 cd favo
 cd favo/
 cd noname/
@@ -120,30 +127,41 @@ date -s 14-6-23
 date -s last MON
 df
 df --help
+dif.sh
 dif.sh 
 diff bookmarks_14-6-23.html bookmarks_14-6-22.html
 diff hist.txt  ./hist.txt 
 du *
 du *.7z
 du --help
+du -c .
+du -c . | tail -n1
+du -h .
 du -s
 du -s *.7z
 du -s .
+du -s . 
 du -s trygit
 du -s trygit trygit2
 du -s trygit2
+du -sh . 
+du .
 du .
 echo $$
 echo $$
 echo $HISTSIZE
 echo $dir
+echo $var
 echo a
+elm --help
 env
 env
 env |sort
 exit
 exit
 expr --help
+file --help
+find --help
 fit add somthing.txt 
 fit diff
 git  remote
@@ -364,6 +382,7 @@ git mergetool
 git mergetool
 git pull origin fea:master
 git pull origin master 
+git push hmfv master:master
 git push noname 
 git push origin  :tryf4
 git push origin master:master
@@ -384,6 +403,7 @@ git remote
 git remote -a
 git remote -b
 git remote -v
+git remote add hmfv https://github.com/turnon/hmfv.git
 git remote rename origin noname
 git remote show origin 
 git reset --hard
@@ -419,6 +439,7 @@ gitk ../hmfv/
 got log
 grep 'hist' hist.txt 
 grep 'hist' hist.txt 
+grep --help
 gtk
 hist.sh 
 history
@@ -451,6 +472,7 @@ ll
 ll ..
 ls
 ls
+ls 
 ls *.7z |  du -s
 ls *.7z |  du -sh
 ls *.7z |  xargs du -ch
@@ -462,6 +484,7 @@ ls --full-time | awk '{ print $9  }'
 ls --full-time | cut -f9
 ls --fuul-time
 ls --help
+ls -1
 ls -A
 ls -a
 ls -al
@@ -489,6 +512,7 @@ ls t* | du -d
 ls t* | du -s
 ls | cut -d_ -f1
 ls | cut -d_ -f2
+mailx --help
 man du
 mkdir --help
 mkdir bak-i/favo
@@ -505,10 +529,16 @@ mv somthing somthing.txt
 mv test test.sh
 mv wkfv wkfvtmp
 mv wkfvtmp/wkfv ./wkfv
+parallel --help
+parrel --help
 ps
 ps
+ps --help
 ps -elf
 ps -elf
+ps -f
+ps -p $$
+pushd
 pwd
 pwd
 rm -df .git
@@ -523,6 +553,7 @@ rm -rf trygit2
 rm -rf wkfvtmp
 rm somthing.txt 
 script
+sendmail --help
 set
 set
 set +x
@@ -541,8 +572,13 @@ sort -u hist.txt  > hist.txt
 sort -u hist.txt  > hist.txt 
 sort -u hist.txt > hist.tmp
 sync
+tar --help
 test txt
 test.sh txt
+time ../tool/dif.sh 
+time ls
+time ls and .
+type ls
 vi a.txt 
 vi chg.sh1
 vi chg.sh1 
@@ -558,5 +594,9 @@ vo a.txt
 watch cat chgd.sh 
 wc -l hist.txt 
 wc -l hist.txt 
+which ls
+whichis ls
 while true do cat chgd.sh done; 
 while true do cat chgd.sh done;  l
+xargs 
+xargs --help
