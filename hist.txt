@@ -7,6 +7,7 @@
 > b.txt
 > somthing
 > tobeclean
+>r
 and --help
 cat ./.git/FETCH_HEAD 
 cat .git/refs/heads/master 
@@ -25,9 +26,12 @@ cat hist.txt
 cat hist.txt 
 cat hist.txt | cut -f2
 cat hist.txt | cut -f2 | sort -u > hist.$$
+cat r
+cat s
 cat somthing 
 cat somthing.txt 
 cat somthing.txt 
+cat t
 cat txt
 cat ~/.bash_history 
 cd '第一次公开课视频和资料(9月7日)'
@@ -51,6 +55,8 @@ cd /c
 cd /c/DISK-D/trygit
 cd /c/DISK-D/trygit/
 cd /c/DISK-D/trygit/
+cd /dev/fd
+cd /g
 cd /i
 cd /i/bak-i
 cd /i/bak-i/
@@ -136,6 +142,7 @@ du *.7z
 du --help
 du -c .
 du -c . | tail -n1
+du -ch .
 du -h .
 du -s
 du -s *.7z
@@ -149,6 +156,7 @@ du .
 du .
 echo $$
 echo $$
+echo $$;tst;sh tst;. tst;source tst
 echo $HISTSIZE
 echo $dir
 echo $var
@@ -157,6 +165,11 @@ elm --help
 env
 env
 env |sort
+exec --help
+exec 1>&4
+exec 4>&1
+exec >r
+exec r>&1
 exit
 exit
 expr --help
@@ -164,6 +177,7 @@ file --help
 find --help
 fit add somthing.txt 
 fit diff
+fork --help
 git  remote
 git  remote -v
 git  status
@@ -441,6 +455,7 @@ grep 'hist' hist.txt
 grep 'hist' hist.txt 
 grep --help
 gtk
+hist.sh
 hist.sh 
 history
 history
@@ -470,6 +485,7 @@ jobs
 ll
 ll
 ll ..
+ll /
 ls
 ls
 ls 
@@ -490,9 +506,11 @@ ls -a
 ls -al
 ls -al
 ls -al ../favo1
+ls -al /
 ls -alc
 ls -l
 ls ..
+ls /
 ls ^t
 ls ^t* 
 ls b*
@@ -551,7 +569,11 @@ rm -rf .git
 rm -rf favo
 rm -rf trygit2
 rm -rf wkfvtmp
+rm r
 rm somthing.txt 
+rm t
+rm t s
+rm tst
 script
 sendmail --help
 set
@@ -571,6 +593,9 @@ sort -u hist.txt
 sort -u hist.txt  > hist.txt 
 sort -u hist.txt  > hist.txt 
 sort -u hist.txt > hist.tmp
+source --help
+source tst
+strace
 sync
 tar --help
 test txt
@@ -578,6 +603,19 @@ test.sh txt
 time ../tool/dif.sh 
 time ls
 time ls and .
+tst
+tst 2>&1
+tst 2>&3 3>t
+tst 3>&2 2>&1 1>&3 >t 2>s
+tst 3>&2 3>t
+tst 4>r
+tst > t
+tst >r
+tst >t 2>&1
+tst >t 2>s
+tst >t t>s
+tst;sh tst;. tst;source tst
+tst;tst
 type ls
 vi a.txt 
 vi chg.sh1
@@ -589,11 +627,13 @@ vi somthing.txt
 vi somthing.txt 
 vi test
 vi test.sh 
+vi tst
 vi txt
 vo a.txt 
 watch cat chgd.sh 
 wc -l hist.txt 
 wc -l hist.txt 
+wc r
 which ls
 whichis ls
 while true do cat chgd.sh done; 
