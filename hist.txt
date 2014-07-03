@@ -1,6 +1,7 @@
  chg.sh1 
 '' > sub.txt 
 ( var=abc )
+. hist.sh 
 ../tool/chgd.sh .
 ../tool/dif.sh 
 ;
@@ -105,11 +106,13 @@ cd favo/
 cd noname/
 cd script/
 cd test/
+cd tool
 cd tool/
 cd true\ detetive/
 cd trygit2
 cd unix
 cd wkfv
+cd wkfv/
 cd ~
 chg.sh1 
 chgd.sh
@@ -126,6 +129,7 @@ cp -R favo favo1
 cp ../favo ../favo1
 cp ../favo1/,git ./
 cp ../favo1/.git ./
+cp ../tool/dif.sh ../tool/dif.sh2
 cp ./favo favo1
 cp chg.sh1 ../favo
 cp chgd.sh chg.sh1
@@ -177,6 +181,7 @@ df
 df --help
 dif.sh
 dif.sh 
+diff --help
 diff bookmarks_14-6-23.html bookmarks_14-6-22.html
 diff hist.txt  ./hist.txt 
 diff sub.txt pre.txt 
@@ -246,6 +251,7 @@ git add bookmarks_14-6-5.html
 git add chg.sh1
 git add chgd.sh
 git add dif.sh
+git add hist.sh
 git add hist.txt
 git add somthing
 git add somthing.txt
@@ -323,6 +329,7 @@ git commit  bookmarks_14-6-16.html
 git commit  somthing.txt
 git commit --amend
 git commit -a hist.txt
+git commit -m 'bk with new shell script'
 git commit -m 'script'
 git commit -v
 git commit a.txt
@@ -358,6 +365,7 @@ git diff fcf8449 c29428a
 git diff fcf8449 c29a28a
 git diff fea 
 git diff ff62987 c29a28a
+git diff hist.txt
 git diff master 
 git diff master master 
 git diff master tmp 
@@ -509,6 +517,7 @@ grep 'count' *
 grep 'hist' hist.txt 
 grep 'sy' *
 grep --help
+grep --hrlp
 grep -v '<<<<' tmp.hist >hist.txt
 grep -v '====' hist.txt >tmp.hist
 grep -v '>>>>' hist.txt >tmp.hist
@@ -604,6 +613,7 @@ mv a.txt a.sh
 mv b.txt a.txt 
 mv chg.sh1 chgd.sh 
 mv chgd.sh1 chgd.sh
+mv hist.17856 hist.txt 
 mv hist.3660  hist.txt 
 mv hist.tmp hist.txt 
 mv script.tar.140609171407  /dev/null
@@ -636,6 +646,7 @@ rm -f bm.html
 rm -f dif.18832 
 rm -f dif.19596 
 rm -f dif.20208 
+rm -f dif.sh2
 rm -f difdetail.18648 difsum.18648 
 rm -f pre.txt sub.txt com.txt 
 rm -f script.tar.140609171407 
@@ -671,7 +682,10 @@ sleep 60 &
 sort --help
 sort -u hist.txt 
 sort -u hist.txt  > hist.txt 
+sort -u hist.txt > hist.$$
 sort -u hist.txt > hist.tmp
+sort -u hist.txt | head -n10
+sort hist.txt | uniq | head -n10
 source --help
 source tst
 strace
