@@ -3,6 +3,7 @@
 ( var=abc )
 ../tool/chgd.sh .
 ../tool/dif.sh 
+;
 > a.txt
 > a.txt << EOF
 > b.txt
@@ -11,6 +12,7 @@
 > tobeclean
 >chgd.sh
 >r
+abc=abcde
 and --help
 bmlog=$(git log --oneline --reverse | grep '[0-9]$'  | awk '{print $1}')
 bmlog=$(git log --oneline | awk '{$1}')
@@ -25,11 +27,13 @@ cat .git/refs/heads/somefea
 cat << EOF >somthing
 cat > a.txt 
 cat > a.txt <<EOF 
+cat >tst
 cat a
 cat a.txt 
 cat a.txt <<EOF
 cat bookmarks_14-6-16.html 
 cat chgd.sh 
+cat dif.sh 
 cat dif.sh -
 cat hist.sh 
 cat hist.txt 
@@ -42,6 +46,7 @@ cat somthing.txt
 cat sub.txt 
 cat t
 cat trace_UAT_sql.sh 
+cat tst
 cat txt
 cat ~/.bash_history 
 cd 
@@ -194,12 +199,15 @@ du -sh .
 du .
 echo $$
 echo $$;tst;sh tst;. tst;source tst
+echo $(#abc)
 echo $HISTSIZE
 echo $bmlog
 echo $dir
 echo $nex
 echo $pre
 echo $var
+echo ${#abc}
+echo ${abc}
 echo '' > sub.txt 
 echo a
 elm --help
@@ -524,6 +532,9 @@ history | tail -n10
 history | tail -n15 >> chgd.sh 
 hitsory -w
 jobs
+less
+less --help
+less <(ls -al)
 ll
 ll ..
 ll /
@@ -584,6 +595,9 @@ mkdir --help
 mkdir bak-i/favo
 mkdir test
 mkdir wkfv
+more
+more <$(ls -al)
+more <(ls -al)
 mv --help
 mv . ../wkfvtmp
 mv a.txt a.sh
@@ -643,10 +657,13 @@ set
 set +x
 set --help
 set -x
+sh -v tst
+sh -x tst
 sh chg.sh1
 sh chgd.sh 
 sh hist.sh 
 sh test.sh 
+sh tst
 sleep 10 &
 sleep 5 &
 sleep 50 &
@@ -664,6 +681,7 @@ tac bm.html
 tar --help
 tar tvf script.tar.140609171407 
 tar xf script.tar.140609171407 
+test --help
 test txt
 test.sh
 test.sh txt
@@ -708,6 +726,7 @@ vi txt
 vo a.txt 
 watch cat chgd.sh 
 wc -l hist.txt 
+wc hist.txt 
 wc r
 which ls
 whichis ls
