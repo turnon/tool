@@ -23,6 +23,8 @@
 abc=abcde
 and --help
 bg
+bg 1
+bg 15608
 bmlog=$(git log --oneline --reverse | grep '[0-9]$'  | awk '{print $1}')
 bmlog=$(git log --oneline | awk '{$1}')
 bmlog=$(git log --oneline | awk '{print $1}')
@@ -349,7 +351,10 @@ git commit  a.txt
 git commit  bookmarks_14-6-16.html
 git commit  somthing.txt
 git commit --amend
+git commit -a -m "in one line"
 git commit -a hist.txt
+git commit -m "bk after new script"
+git commit -m "replace return"
 git commit -m 'bk with new shell script'
 git commit -m 'script'
 git commit -v
@@ -382,6 +387,7 @@ git diff a
 git diff a.txt
 git diff a950d3b 870efc7
 git diff bookmarks_14-6-23.html bookmarks_14-6-22.html
+git diff d47b1e5 f85c6bb
 git diff fcf8449 c29428a
 git diff fcf8449 c29a28a
 git diff fea 
@@ -569,7 +575,21 @@ history | tail -n10
 history | tail -n15 >> chgd.sh 
 hitsory -w
 jobs
+jpbs
+kill --help
+kill -1 
+kill -1 14488
+kill -1 14860
+kill -1 16092
+kill -1 161
+kill -1 16136
+kill -1 17576
+kill -1 18092
+kill -9 16092
+kill -9 17576
 kill -l
+kill 15180
+kill 15608
 less
 less --help
 less <(ls -al)
@@ -660,6 +680,7 @@ nex=$(echo $bmlog | cut -d' ' -f2, )
 nex=$(echo $bmlog | cut -d' ' -f2- )
 nohup --help
 nohup ls
+p -
 parallel --help
 parrel --help
 paste --help
@@ -754,7 +775,9 @@ touch bookmarks_14-6-25.html -m --time '140630'
 touch bookmarks_14-6-25.html -m --time='140630'
 touch bookmarks_14-6-25.html -m -d '140630'
 touch bookmarks_14-6-25.html -mtime '140630'
+trap --help
 tst
+tst &
 tst 2>&1
 tst 2>&3 3>t
 tst 3>&2 2>&1 1>&3 >t 2>s
