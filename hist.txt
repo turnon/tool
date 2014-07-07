@@ -8,6 +8,7 @@
 (ping www.ibm.com &)
 (ping www.ibm.com &;)
 . hist.sh 
+../tool/chgd.sh 
 ../tool/chgd.sh .
 ../tool/dif.sh 
 ;
@@ -29,6 +30,7 @@ bmlog=$(git log --oneline | grep '[0-9]$' | cat -n | sort -r)
 bmlog=$(git log --oneline | grep '[0-9]$' | cat -n)
 cal
 cat --help
+cat ../tool/chgd.sh 
 cat ./.git/FETCH_HEAD 
 cat .git/refs/heads/master 
 cat .git/refs/heads/somefea 
@@ -89,7 +91,10 @@ cd /dev/fd
 cd /e
 cd /e/
 cd /e/bm
+cd /e/com/
 cd /e/favo/
+cd /e/w
+cd /e/wkfv/
 cd /g
 cd /i
 cd /i/bak-i
@@ -243,6 +248,8 @@ fitk
 for a in $(kill -l);do echo $a done;
 for a in $(kill -l);do echo $a; done;
 fork --help
+gcc
+gcc --help
 git  remote
 git  remote -v
 git  status
@@ -297,14 +304,17 @@ git branch tryf3
 git branch tryf4
 git check out
 git checkout
+git checkout 
 git checkout -- a.txt
 git checkout -b somefea2
 git checkout 20cceed
 git checkout bm.html
 git checkout bookmarks_14-6-16.html
+git checkout e5115fa
 git checkout fea
 git checkout fea 
 git checkout fea]
+git checkout hist.txt
 git checkout master
 git checkout master 
 git checkout sc
@@ -509,10 +519,12 @@ git rm -f bm.html
 git rm bm.html
 git rm bookmarks_14-6-16.html
 git rm chg.sh1
+git rm hist.txt
 git status
 git status 
 git status --oneline
 git status --online
+git status]
 git staus
 git stuas
 git svn
@@ -520,9 +532,11 @@ git tag
 gitk
 gitk ../hmfv/
 got log
+grep '' hist.txt 
 grep '2208' *
 grep '2209' *
 grep '2210' *
+grep '^M' hist.txt 
 grep 'chg_ot_type' *
 grep 'count' *
 grep 'hist' hist.txt 
@@ -589,6 +603,7 @@ ls -alc
 ls -l
 ls ..
 ls ../
+ls ../tool/
 ls /
 ls /a
 ls /c
@@ -599,6 +614,7 @@ ls b*
 ls b* | cut -d_ -f1
 ls b* | cut -d_ -f2
 ls bo*
+ls bookm*
 ls t
 ls t*
 ls t* 
@@ -675,6 +691,7 @@ rm -f somthing.txt
 rm -f trygit2
 rm -rf .git
 rm -rf favo
+rm -rf script
 rm -rf trygit2
 rm -rf wkfvtmp
 rm hist.txt 
@@ -684,6 +701,7 @@ rm t
 rm t s
 rm tst
 script
+sed --help
 sendmail --help
 set
 set +x
@@ -706,7 +724,9 @@ sort -u hist.txt
 sort -u hist.txt  > hist.txt 
 sort -u hist.txt > hist.$$
 sort -u hist.txt > hist.tmp
+sort -u hist.txt | head
 sort -u hist.txt | head -n10
+sort -u hist.txt | head -n50
 sort hist.txt | uniq | head -n10
 source --help
 source tst
@@ -715,8 +735,11 @@ sync
 tac --help
 tac bm.html 
 tar --help
+tar -xf script.szp52.140707145239 
+tar tvf script.szp52.140707145239 
 tar tvf script.tar.140609171407 
 tar xf script.tar.140609171407 
+tar xvf script.szp52.140707145239 .
 test --help
 test txt
 test.sh
