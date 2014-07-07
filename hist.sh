@@ -4,6 +4,8 @@ history -w
 
 cat ~/.bash_history >> hist.txt
 
-sort -u hist.txt > hist.$$
+sed -e 's/\r//g' hist.txt > hist.$$
 
-mv hist.$$ hist.txt
+sort -u hist.$$ > hist.txt
+
+rm hist.$$
