@@ -52,6 +52,7 @@ cat hist.sh
 cat hist.txt
 cat hist.txt | cut -f2
 cat hist.txt | cut -f2 | sort -u > hist.$$
+cat profile
 cat r
 cat s
 cat somthing
@@ -102,6 +103,7 @@ cd /e/favo/
 cd /e/tool/
 cd /e/w
 cd /e/wkfv/
+cd /etc/
 cd /g
 cd /i
 cd /i/bak-i
@@ -194,6 +196,7 @@ date -s '14-6-18' -d 'last MON'
 date -s 'last MON'
 date -s 14-6-23
 date -s last MON
+dd if=tst
 df
 df --help
 dif.sh
@@ -348,6 +351,7 @@ git commit  somthing.txt
 git commit --amend
 git commit -a -m "bk"
 git commit -a -m "in one line"
+git commit -a -m 'bk'
 git commit -a -m 'hist bk without space'
 git commit -a hist.txt
 git commit -m "bk after new script"
@@ -652,6 +656,8 @@ mkfifo --help
 more
 more <$(ls -al)
 more <(ls -al)
+mount
+mount --help
 mv --help
 mv . ../wkfvtmp
 mv a.txt a.sh
@@ -686,6 +692,9 @@ ps -elf
 ps -f
 ps -l
 ps -p $$
+ps | awk '/sleep/ {print "kill -9",$1}'
+ps | awk '/sleep/ {print $1}'
+ps | awk '/sleep/ {print \"kill -9\",$1}'
 pushd
 pwd
 read --help
@@ -716,6 +725,8 @@ rm somthing.txt
 rm t
 rm t s
 rm tst
+rpm --help
+rpm -ivh abc
 script
 sed --help
 sed -e 's/[ ]$//' hist.txt > hist.txt1
@@ -740,6 +751,7 @@ sleep 10 &
 sleep 5 &
 sleep 50 &
 sleep 60 &
+sleep 600 &
 sort --help
 sort -u hist.txt
 sort -u hist.txt  > hist.txt
@@ -751,6 +763,7 @@ sort -u hist.txt | head -n50
 sort hist.txt | uniq | head -n10
 source --help
 source tst
+stat a
 strace
 sync
 tac --help
@@ -791,6 +804,9 @@ tst >t t>s
 tst;sh tst;. tst;source tst
 tst;tst
 type ls
+type mount
+type rpm
+type test
 vi a.txt
 vi chg.sh1
 vi chgd.sh
