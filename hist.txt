@@ -10,6 +10,8 @@
 . hist.sh
 ../tool/chgd.sh
 ../tool/chgd.sh .
+../tool/crsp.sh jp.txt > jp.$$
+../tool/crsp.sh jp.txt | sort -u jp.$$;mv jp.$$ jp.txt
 ../tool/dif.sh
 ;
 > a.txt
@@ -22,6 +24,11 @@
 >r
 abc=abcde
 and --help
+awk --help
+awk -F'('  '{print $1}' jp.txt
+awk -F'('  '{print $1}' jp.txt > jp.tmp
+awk -f'('  '{print $1}' jp.txt
+awk -f(  '{print $1}' jp.txt
 bg
 bg 1
 bg 15608
@@ -52,6 +59,10 @@ cat hist.sh
 cat hist.txt
 cat hist.txt | cut -f2
 cat hist.txt | cut -f2 | sort -u > hist.$$
+cat jp.txt
+cat jp.txt | tr  [a-z] [A-Z] >jp.$$
+cat jp.txt | tr -s [a-z] [A-Z]
+cat jp.txt | tr -s [a-z] [A-Z] >jp.$$
 cat profile
 cat r
 cat s
@@ -78,6 +89,7 @@ cd ../favo/
 cd ../favo1
 cd ../hmfv/
 cd ../noname/
+cd ../oad
 cd ../test/
 cd ../tool
 cd ../tool/
@@ -113,6 +125,7 @@ cd /i/bak-i/favo/
 cd /i/bak-i/test/
 cd /i/bak-i/tool/
 cd /i/bak-i/trygit/
+cd /i/bak-i/wkfv/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/第一次公开课视频和资料(9月7日)
 cd /w/oth-v/
@@ -125,6 +138,7 @@ cd c
 cd favo
 cd favo/
 cd noname/
+cd oad
 cd script/
 cd test/
 cd tool
@@ -156,6 +170,7 @@ cp chg.sh1 ../favo
 cp chgd.sh chg.sh1
 cp favo favo1
 cp h* test/
+cp hist.sh crsp.sh
 cta chgd.sh
 cta trace_UAT_sql.sh
 cut --help
@@ -280,6 +295,7 @@ git add chg.sh1
 git add chgd.sh
 git add dif.sh
 git add hist.sh
+git add hist.sh crsp.sh
 git add hist.txt
 git add somthing
 git add somthing.txt
@@ -353,10 +369,12 @@ git commit -a -m "bk"
 git commit -a -m "in one line"
 git commit -a -m 'bk'
 git commit -a -m 'hist bk without space'
+git commit -a -m'bk'
 git commit -a hist.txt
 git commit -m "bk after new script"
 git commit -m "replace return"
 git commit -m 'bk with new shell script'
+git commit -m 'extract sed'
 git commit -m 'remove space'
 git commit -m 'script'
 git commit -v
@@ -478,6 +496,7 @@ git pull origin fea:master
 git pull origin master
 git push hmfv master:master
 git push noname
+git push oad master:master
 git push origin
 git push origin  :tryf4
 git push origin master:master
@@ -494,12 +513,16 @@ git remote
 git remote -a
 git remote -b
 git remote -v
+git remote add -f https://github.com/turnon/oad.git
 git remote add -f https://github.com/turnon/wkfv.git
 git remote add hmfv https://github.com/turnon/hmfv.git
+git remote add https://github.com/turnon/oad.git
 git remote add https://github.com/turnon/wkfv.git
 git remote add https://github.com/turnon/wpfv.git
+git remote add oad https://github.com/turnon/oad.git
 git remote add wkfv https://github.com/turnon/wkfv.git
 git remote add wpfv https://github.com/turnon/wpfv.git
+git remote https://github.com/turnon/oad.git
 git remote rename origin noname
 git remote show origin
 git reset --hard
@@ -543,6 +566,7 @@ grep '^M' hist.txt
 grep 'chg_ot_type' *
 grep 'count' *
 grep 'hist' hist.txt
+grep 'remote' ../tool/hist.txt
 grep 'sy' *
 grep 'v' hist.txt
 grep --help
@@ -650,6 +674,7 @@ man du
 man ls
 mkdir --help
 mkdir bak-i/favo
+mkdir oad
 mkdir test
 mkdir wkfv
 mkfifo --help
@@ -667,6 +692,8 @@ mv chgd.sh1 chgd.sh
 mv hist.17856 hist.txt
 mv hist.3660  hist.txt
 mv hist.tmp hist.txt
+mv jp.4896 jp.txt
+mv jp.tmp jp.txt
 mv script.tar.140609171407  /dev/null
 mv somthing somthing.txt
 mv test test.sh
@@ -760,6 +787,8 @@ sort -u hist.txt > hist.tmp
 sort -u hist.txt | head
 sort -u hist.txt | head -n10
 sort -u hist.txt | head -n50
+sort -u jp.4896 >jp.txt
+sort -u jp.txt >jp.$$ ; mv jp.$$ jp.txt
 sort hist.txt | uniq | head -n10
 source --help
 source tst
@@ -788,7 +817,9 @@ touch bookmarks_14-6-25.html -m --time '140630'
 touch bookmarks_14-6-25.html -m --time='140630'
 touch bookmarks_14-6-25.html -m -d '140630'
 touch bookmarks_14-6-25.html -mtime '140630'
+tr --help
 trap --help
+trap -l
 tst
 tst &
 tst 2>&1
@@ -801,6 +832,7 @@ tst >r
 tst >t 2>&1
 tst >t 2>s
 tst >t t>s
+tst;echo $abc
 tst;sh tst;. tst;source tst
 tst;tst
 type ls
@@ -810,6 +842,7 @@ type test
 vi a.txt
 vi chg.sh1
 vi chgd.sh
+vi crsp.sh
 vi dif.sh
 vi hist.sh
 vi hist.txt
@@ -819,6 +852,7 @@ vi somthing.txt
 vi test
 vi test.sh
 vi tst
+vi tst1
 vi txt
 vo a.txt
 watch cat chgd.sh
