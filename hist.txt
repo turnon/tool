@@ -47,6 +47,7 @@ cat bookmarks_14-6-16.html
 cat chgd.sh
 cat dif.sh
 cat dif.sh -
+cat err
 cat hist.sh
 cat hist.txt
 cat hist.txt | cut -f2
@@ -57,6 +58,9 @@ cat somthing
 cat somthing.txt
 cat sub.txt
 cat t
+cat tool/chgd.sh
+cat tool/dif.sh
+cat tool/hist.sh
 cat trace_UAT_sql.sh
 cat tst
 cat txt
@@ -135,6 +139,7 @@ chgd.sh ../hmfv
 chgd.sh ../hmfv/
 chgd.sh1
 clear
+clera
 comm -12 sub.txt pre.txt
 cp * ../
 cp --help
@@ -219,7 +224,9 @@ echo $$
 echo $$;tst;sh tst;. tst;source tst
 echo $(#abc)
 echo $HISTSIZE
+echo $abc
 echo $bmlog
+echo $cm
 echo $dir
 echo $nex
 echo $pre
@@ -341,10 +348,12 @@ git commit  somthing.txt
 git commit --amend
 git commit -a -m "bk"
 git commit -a -m "in one line"
+git commit -a -m 'hist bk without space'
 git commit -a hist.txt
 git commit -m "bk after new script"
 git commit -m "replace return"
 git commit -m 'bk with new shell script'
+git commit -m 'remove space'
 git commit -m 'script'
 git commit -v
 git commit a.txt
@@ -675,9 +684,12 @@ ps -e
 ps -ef
 ps -elf
 ps -f
+ps -l
 ps -p $$
 pushd
 pwd
+read --help
+read -t 5 abc
 rm -df .git
 rm -df trygit2
 rm -f ?*
@@ -722,6 +734,8 @@ sh chgd.sh
 sh hist.sh
 sh test.sh
 sh tst
+simtop
+simtop 2>err
 sleep 10 &
 sleep 5 &
 sleep 50 &
@@ -783,6 +797,8 @@ vi chgd.sh
 vi dif.sh
 vi hist.sh
 vi hist.txt
+vi sim top
+vi simtop
 vi somthing.txt
 vi test
 vi test.sh
