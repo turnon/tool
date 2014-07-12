@@ -1,5 +1,7 @@
+
  chg.sh1
  ping www.ibm.com >t &
+'
 '' > sub.txt
 ( ping www.ibm.com & )
 ( ping www.ibm.com >t & )
@@ -10,6 +12,7 @@
 . hist.sh
 ../tool/chgd.sh
 ../tool/chgd.sh .
+../tool/crsp.sh f.txt | sort -u > f.$$ ; mv f.$$ f.txt
 ../tool/crsp.sh jp.txt > jp.$$
 ../tool/crsp.sh jp.txt | sort -u jp.$$;mv jp.$$ jp.txt
 ../tool/dif.sh
@@ -22,7 +25,12 @@
 > tobeclean
 >chgd.sh
 >r
+\ll
+\ls
 abc=abcde
+alias
+alias --help
+alias ll='ls -al'
 and --help
 awk --help
 awk -F'('  '{print $1}' jp.txt
@@ -52,9 +60,11 @@ cat a.txt
 cat a.txt <<EOF
 cat bookmarks_14-6-16.html
 cat chgd.sh
+cat crsp.sh
 cat dif.sh
 cat dif.sh -
 cat err
+cat f.txt
 cat hist.sh
 cat hist.txt
 cat hist.txt | cut -f2
@@ -90,6 +100,7 @@ cd ../favo1
 cd ../hmfv/
 cd ../noname/
 cd ../oad
+cd ../oad/
 cd ../test/
 cd ../tool
 cd ../tool/
@@ -122,6 +133,7 @@ cd /i/bak-i
 cd /i/bak-i/
 cd /i/bak-i/favo
 cd /i/bak-i/favo/
+cd /i/bak-i/hmfv/
 cd /i/bak-i/test/
 cd /i/bak-i/tool/
 cd /i/bak-i/trygit/
@@ -226,6 +238,7 @@ du *.7z
 du --help
 du -c .
 du -c . | tail -n1
+du -ch
 du -ch .
 du -ch tool
 du -h .
@@ -235,11 +248,15 @@ du -s .
 du -s trygit
 du -s trygit trygit2
 du -s trygit2
+du -sh
 du -sh .
 du -sh tool
+du -sh wkfv
 du .
+du wkfv
 echo $$
 echo $$;tst;sh tst;. tst;source tst
+echo $' \''
 echo $(#abc)
 echo $HISTSIZE
 echo $abc
@@ -251,7 +268,9 @@ echo $pre
 echo $var
 echo ${#abc}
 echo ${abc}
+echo '
 echo '' > sub.txt
+echo \'
 echo a
 elm --help
 env
@@ -294,6 +313,7 @@ git add bookmarks_14-6-5.html
 git add chg.sh1
 git add chgd.sh
 git add dif.sh
+git add f.txt
 git add hist.sh
 git add hist.sh crsp.sh
 git add hist.txt
@@ -367,6 +387,7 @@ git commit  somthing.txt
 git commit --amend
 git commit -a -m "bk"
 git commit -a -m "in one line"
+git commit -a -m 'after extract'
 git commit -a -m 'bk'
 git commit -a -m 'hist bk without space'
 git commit -a -m'bk'
@@ -375,6 +396,7 @@ git commit -m "bk after new script"
 git commit -m "replace return"
 git commit -m 'bk with new shell script'
 git commit -m 'extract sed'
+git commit -m 'film'
 git commit -m 'remove space'
 git commit -m 'script'
 git commit -v
@@ -418,6 +440,9 @@ git diff master tmp
 git diff somthing.txt
 git diff sub.txt pre.txt
 git diff tmp
+git diff tmp | grep '^-'
+git diff tmp | grep -c '^+'
+git diff tmp | grep -c '^-'
 git diff tryf3
 git fetch
 git fetch --all
@@ -496,6 +521,7 @@ git pull origin fea:master
 git pull origin master
 git push hmfv master:master
 git push noname
+git push oad  master:master
 git push oad master:master
 git push origin
 git push origin  :tryf4
@@ -616,6 +642,9 @@ less <(ls -al)
 ll
 ll ..
 ll /
+ll | awk '{$1="" ;print $0}'
+ll | awk '{$1="" ;print $0}' | cut -c2-
+ll | awk '{$2="" ;print $0}'
 ll | grep 'u'
 ls
 ls *.7z |  du -s
@@ -668,6 +697,7 @@ ls t* | du -s
 ls | cut -d_ -f1
 ls | cut -d_ -f2
 ls | grep 'u'
+ls | vi -
 mailx --help
 man cat
 man du
@@ -810,6 +840,7 @@ test.sh txt
 time ../tool/dif.sh
 time ls
 time ls and .
+top
 touch --help
 touch bookmarks_14-6-25.html --mtime '140630'
 touch bookmarks_14-6-25.html --mtime='140630'
@@ -855,6 +886,7 @@ vi tst
 vi tst1
 vi txt
 vo a.txt
+wait --help
 watch cat chgd.sh
 wc -l hist.txt
 wc hist.txt
