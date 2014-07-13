@@ -32,6 +32,10 @@ alias
 alias --help
 alias ll='ls -al'
 and --help
+awk '{print $1}' hist.txt | sort | uniq -c
+awk '{print $1}' hist.txt | sort | uniq -c | sort
+awk '{print $1}' hist.txt | sort | uniq -c | sort -r
+awk '{print $1}' hist.txt | sort | uniq -c | sort -v
 awk --help
 awk -F'('  '{print $1}' jp.txt
 awk -F'('  '{print $1}' jp.txt > jp.tmp
@@ -846,6 +850,7 @@ sed -e 's/ICON[\=][\"][\"]//g' bookmarks_14-7-13.html  > $$.html
 sed -e 's/[ ]$//' hist.txt > hist.txt1
 sed -e 's/[]$//'
 sed -e 's/[]$//' hist.txt > hist.txt1
+sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html
 sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html 
 sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html  > $$.html
 sed -e 's/data\:>//g' bookmarks_14-7-13.html  > $$.html
