@@ -48,6 +48,7 @@ bmlog=$(git log --oneline | grep '[0-9]$' | cat -n)
 cal
 cat --help
 cat ../tool/chgd.sh
+cat ../tool/dif.sh
 cat ./.git/FETCH_HEAD
 cat .git/refs/heads/master
 cat .git/refs/heads/somefea
@@ -97,7 +98,9 @@ cd ../../bm
 cd ../favo
 cd ../favo/
 cd ../favo1
+cd ../hmfv
 cd ../hmfv/
+cd ../hmfv/ ; git branch -D tmp ; cd -
 cd ../noname/
 cd ../oad
 cd ../oad/
@@ -134,6 +137,7 @@ cd /i/bak-i/
 cd /i/bak-i/favo
 cd /i/bak-i/favo/
 cd /i/bak-i/hmfv/
+cd /i/bak-i/oad
 cd /i/bak-i/test/
 cd /i/bak-i/tool/
 cd /i/bak-i/trygit/
@@ -165,6 +169,7 @@ chg.sh1
 chgd.sh
 chgd.sh ../hmfv
 chgd.sh ../hmfv/
+chgd.sh /i/bak-i/hmfv
 chgd.sh1
 clear
 clera
@@ -254,6 +259,7 @@ du -sh tool
 du -sh wkfv
 du .
 du wkfv
+echo "sed -e  's/data\:.*\">/\">/' " > /i/bak-i/tool/cleanicon.sh
 echo $$
 echo $$;tst;sh tst;. tst;source tst
 echo $' \''
@@ -265,6 +271,7 @@ echo $cm
 echo $dir
 echo $nex
 echo $pre
+echo $thea
 echo $var
 echo ${#abc}
 echo ${abc}
@@ -272,6 +279,7 @@ echo '
 echo '' > sub.txt
 echo \'
 echo a
+egrep --help
 elm --help
 env
 env |sort
@@ -325,6 +333,9 @@ git blame chgd.sh
 git brach
 git brach -d master
 git branch
+git branch  master
+git branch --help
+git branch -D checkout
 git branch -D fea
 git branch -D master
 git branch -D tmp
@@ -336,6 +347,7 @@ git branch -d somefea2
 git branch -d somefea3onfea2
 git branch -m master
 git branch -r master
+git branch checkout master
 git branch fea
 git branch master
 git branch somefea
@@ -387,6 +399,8 @@ git commit  somthing.txt
 git commit --amend
 git commit -a -m "bk"
 git commit -a -m "in one line"
+git commit -a -m $(date)
+git commit -a -m 'add jp drama'
 git commit -a -m 'after extract'
 git commit -a -m 'bk'
 git commit -a -m 'hist bk without space'
@@ -395,6 +409,7 @@ git commit -a hist.txt
 git commit -m "bk after new script"
 git commit -m "replace return"
 git commit -m 'bk with new shell script'
+git commit -m 'err at bottom'
 git commit -m 'extract sed'
 git commit -m 'film'
 git commit -m 'remove space'
@@ -429,6 +444,7 @@ git diff a.txt
 git diff a950d3b 870efc7
 git diff bookmarks_14-6-23.html bookmarks_14-6-22.html
 git diff d47b1e5 f85c6bb
+git diff dd46a03 26f3401 | grep 'HREF' > tmp.$$
 git diff fcf8449 c29428a
 git diff fcf8449 c29a28a
 git diff fea
@@ -448,6 +464,7 @@ git fetch
 git fetch --all
 git fetch -all
 git fetch a
+git fetch hmfv master:tmp
 git fetch noname
 git fetch origin
 git fetch origin  master :master
@@ -581,22 +598,40 @@ git stuas
 git svn
 git tag
 gitk
+gitk ../hmfv
 gitk ../hmfv/
 got log
 grep '' hist.txt
 grep '2208' *
 grep '2209' *
 grep '2210' *
+grep 'ICON' bookmarks_14-7-13.html
+grep 'ICON=[\"]*[\"]' bookmarks_14-7-13.html  | head -n2
 grep '[ ]$' hist.txt
 grep '^M' hist.txt
 grep 'chg_ot_type' *
 grep 'count' *
+grep 'data\:' bookmarks_14-7-13.html | head -n2
+grep 'data\:*' bookmarks_14-7-13.html | head -n2
+grep 'data\:*+' bookmarks_14-7-13.html | head -n2
+grep 'data\:*{+}' bookmarks_14-7-13.html | head -n2
+grep 'data\:.' bookmarks_14-7-13.html | head -n2
+grep 'data\:.*' bookmarks_14-7-13.html | head -n2
+grep 'data\:.*\"' bookmarks_14-7-13.html | head -n2
+grep 'data\:.*\">' bookmarks_14-7-13.html | head -n2
+grep 'data\:.*\"\>' bookmarks_14-7-13.html | head -n2
+grep 'data\:.+' bookmarks_14-7-13.html | head -n2
+grep 'data\:>' bookmarks_14-7-13.html | head -n2
+grep 'data\:[*+]' bookmarks_14-7-13.html | head -n2
+grep 'data\:[*]' bookmarks_14-7-13.html | head -n2
+grep 'data\:[.]+' bookmarks_14-7-13.html | head -n2
 grep 'hist' hist.txt
 grep 'remote' ../tool/hist.txt
 grep 'sy' *
 grep 'v' hist.txt
 grep --help
 grep --hrlp
+grep -=help
 grep -n '[ ]$' hist.txt
 grep -v '<<<<' tmp.hist >hist.txt
 grep -v '====' hist.txt >tmp.hist
@@ -646,6 +681,8 @@ ll | awk '{$1="" ;print $0}'
 ll | awk '{$1="" ;print $0}' | cut -c2-
 ll | awk '{$2="" ;print $0}'
 ll | grep 'u'
+ln
+ln --help
 ls
 ls *.7z |  du -s
 ls *.7z |  du -sh
@@ -674,6 +711,9 @@ ls ../
 ls ../tool/
 ls /
 ls /a
+ls /abc
+ls /abc 2>/dev/null
+ls /abc 2>/dev/null || echo 'err'
 ls /c
 ls /z
 ls ^t
@@ -732,6 +772,7 @@ mv wkfv wkfvtmp
 mv wkfvtmp/wkfv ./wkfv
 nex=$(echo $bmlog | cut -d' ' -f2, )
 nex=$(echo $bmlog | cut -d' ' -f2- )
+nl --help
 nohup --help
 nohup ls
 p -
@@ -769,6 +810,7 @@ rm -f difdetail.18648 difsum.18648
 rm -f pre.txt sub.txt com.txt
 rm -f script.tar.140609171407
 rm -f somthing.txt
+rm -f tmp.3368
 rm -f trygit2
 rm -rf .git
 rm -rf favo
@@ -786,9 +828,27 @@ rpm --help
 rpm -ivh abc
 script
 sed --help
+sed -e  's/data\:.*\">//' bookmarks_14-7-13.html > $$.html
+sed -e  's/data\:.*\">/\">/' bookmarks_14-7-13.html > $$.html
+sed -e 's/ICON=[\"]*[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON=[\"]*[\"]//g' bookmarks_14-7-13.html  | head -n2
+sed -e 's/ICON=[\"]*[\"]//g' bookmarks_14-7-13.html  | head -n50
+sed -e 's/ICON[\=]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"]*[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"]*{*}[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"]*{0}[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"].+[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"][*]+[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"][*]{0}[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"][.]+[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"][\"]//g' bookmarks_14-7-13.html  > $$.html
 sed -e 's/[ ]$//' hist.txt > hist.txt1
 sed -e 's/[]$//'
 sed -e 's/[]$//' hist.txt > hist.txt1
+sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html 
+sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/data\:>//g' bookmarks_14-7-13.html  > $$.html
 sendmail --help
 set
 set +x
@@ -818,7 +878,10 @@ sort -u hist.txt | head
 sort -u hist.txt | head -n10
 sort -u hist.txt | head -n50
 sort -u jp.4896 >jp.txt
+sort -u jp.txt > jp.$$ ; mv jp.$$ jp.txt
+sort -u jp.txt > jp.$$ ; sleep 5 ; mv jp.$$ jp.txt
 sort -u jp.txt >jp.$$ ; mv jp.$$ jp.txt
+sort -u jp.txt | jp.$$ ; mv jp.$$ jp.txt
 sort hist.txt | uniq | head -n10
 source --help
 source tst
@@ -837,6 +900,8 @@ test --help
 test txt
 test.sh
 test.sh txt
+thea=$( grep -c '^[+]' tmp.$$ )
+thea=$( grep -c '^[-]' tmp.$$ )
 time ../tool/dif.sh
 time ls
 time ls and .
@@ -870,9 +935,11 @@ type ls
 type mount
 type rpm
 type test
+vi ../tool/dif.sh
 vi a.txt
 vi chg.sh1
 vi chgd.sh
+vi cleanicon.sh
 vi crsp.sh
 vi dif.sh
 vi hist.sh
@@ -888,9 +955,12 @@ vi txt
 vo a.txt
 wait --help
 watch cat chgd.sh
+wc --help
 wc -l hist.txt
+wc bookmarks_14-7-13.html 3368.html
 wc hist.txt
 wc r
+wc- --help
 which ls
 whichis ls
 while true do cat chgd.sh done;
