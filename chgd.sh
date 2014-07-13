@@ -12,12 +12,21 @@ fl=$(ls bookm*)
 
 checkerr
 
+# clean icon
+for f in $fl
+do
+	sed -e  's/data\:.*\">/\">/' $f > $$.htmltmp
+	mv -v $$.htmltmp $f
+done
+
+# change modify date
 for f in $fl
 do
 	orgdate=$(echo $f | cut -d_ -f2 | cut -d. -f1)
 	touch $f -m -d $orgdate
 done
 
+# add according mod date
 fl=$(ls -rt bookm*)
 
 for f in $fl
