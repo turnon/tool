@@ -9,6 +9,6 @@ do
 checkcmd $word >>cmdtmp.$$
 done
 
-sort cmdtmp.$$ | uniq -c | sort -r
+sort cmdtmp.$$ | uniq -c | sort -nr
 
 rm -f cmdtmp.$$
