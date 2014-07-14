@@ -388,12 +388,14 @@ git commit -a -m $(date)
 git commit --amend
 git commit -a -m 'hist bk without space'
 git commit -a -m "in one line"
+git commit -a -m 'sort number'
 git commit  a.txt
 git commit a.txt
 git commit  bookmarks_14-6-16.html
 git commit bookmarks_14-6-16.html
 git commit chgd.sh
 git commit hist.txt
+git commit -m 'bk'
 git commit -m "bk after new script"
 git commit -m 'bk with new shell script'
 git commit -m 'command count'
@@ -418,6 +420,7 @@ git config --global user.email 'k@wh.com'
 git config --global user.email 'z@z-PC.com'
 git config --global user.name='k'
 git config --global user.name 'k'
+git config --global user.name "k"
 git config --global user.name "ken"
 git config --global user.name 'z'
 git config -l
@@ -564,6 +567,8 @@ git remote --help
 git remote https://github.com/turnon/oad.git
 git remote https://github.com/turnon/tool.git
 git remote rename origin noname
+git remote set-url origin https://github.com/turnon/tool.git
+git remote set-url origin ssh://git@github.com:turnon/tool.git
 git remote show origin
 git  remote -v
 git remote -v
@@ -745,6 +750,7 @@ man cat
 man du
 man history
 man ls
+man sort
 mkdir bak-i/favo
 mkdir --help
 mkdir oad
@@ -869,6 +875,9 @@ set -x
 set +x
 sh chgd.sh
 sh chg.sh1
+sh cmdcnt.sh hist.txt
+sh cmdcnt.sh hist.txt | less
+sh cmdcnt.sh hist.txt | sort -n
 sh hist.sh
 sh test.sh
 sh tst
@@ -971,6 +980,7 @@ vi cleanicon.sh
 vi cmdcnt.sh
 vi crsp.sh
 vi dif.sh
+vi .git/config
 vi hist.sh
 vi hist.txt
 vi simtop
