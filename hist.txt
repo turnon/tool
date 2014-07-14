@@ -1,76 +1,50 @@
 
- chg.sh1
- ping www.ibm.com >t &
-'
-'' > sub.txt
-( ping www.ibm.com & )
-( ping www.ibm.com >t & )
-( var=abc )
-(ping www.ibm.com & ;)
-(ping www.ibm.com &)
-(ping www.ibm.com &;)
-. hist.sh
-../tool/chgd.sh
-../tool/chgd.sh .
-../tool/crsp.sh f.txt | sort -u > f.$$ ; mv f.$$ f.txt
-../tool/crsp.sh jp.txt > jp.$$
-../tool/crsp.sh jp.txt | sort -u jp.$$;mv jp.$$ jp.txt
-../tool/dif.sh
-../tool/dif.sh .
 ;
-> a.txt
-> a.txt << EOF
-> b.txt
-> somthing
-> sub.txt
-> tobeclean
->chgd.sh
->r
-\ll
-\ls
+'
 abc=abcde
 alias
 alias --help
 alias ll='ls -al'
 and --help
+> a.txt
+> a.txt << EOF
+awk -f'('  '{print $1}' jp.txt
+awk -f(  '{print $1}' jp.txt
+awk -F'('  '{print $1}' jp.txt
+awk -F'('  '{print $1}' jp.txt > jp.tmp
+awk --help
 awk '{print $1}' hist.txt | sort | uniq -c
 awk '{print $1}' hist.txt | sort | uniq -c | sort
 awk '{print $1}' hist.txt | sort | uniq -c | sort -r
 awk '{print $1}' hist.txt | sort | uniq -c | sort -v
-awk --help
-awk -F'('  '{print $1}' jp.txt
-awk -F'('  '{print $1}' jp.txt > jp.tmp
-awk -f'('  '{print $1}' jp.txt
-awk -f(  '{print $1}' jp.txt
 bg
 bg 1
 bg 15608
-bmlog=$(git log --oneline --reverse | grep '[0-9]$'  | awk '{print $1}')
 bmlog=$(git log --oneline | awk '{$1}')
 bmlog=$(git log --oneline | awk '{print $1}')
-bmlog=$(git log --oneline | grep '[0-9]$' | cat -n | sort -r)
 bmlog=$(git log --oneline | grep '[0-9]$' | cat -n)
+bmlog=$(git log --oneline | grep '[0-9]$' | cat -n | sort -r)
+bmlog=$(git log --oneline --reverse | grep '[0-9]$'  | awk '{print $1}')
+> b.txt
 cal
-cat --help
-cat ../tool/chgd.sh
-cat ../tool/dif.sh
-cat ./.git/FETCH_HEAD
-cat .git/refs/heads/master
-cat .git/refs/heads/somefea
-cat << EOF >somthing
-cat > a.txt
-cat > a.txt <<EOF
-cat >tst
 cat a
+cat > a.txt
 cat a.txt
+cat > a.txt <<EOF
 cat a.txt <<EOF
+cat ~/.bash_history
 cat bookmarks_14-6-16.html
 cat chgd.sh
 cat crsp.sh
 cat dif.sh
 cat dif.sh -
+cat << EOF >somthing
 cat err
 cat f.txt
+cat ./.git/FETCH_HEAD
+cat .git/refs/heads/master
+cat .git/refs/heads/somefea
+cat --help
 cat hist.sh
 cat hist.txt
 cat hist.txt | cut -f2
@@ -86,57 +60,55 @@ cat somthing
 cat somthing.txt
 cat sub.txt
 cat t
+cat ../tool/chgd.sh
 cat tool/chgd.sh
+cat ../tool/dif.sh
 cat tool/dif.sh
 cat tool/hist.sh
 cat trace_UAT_sql.sh
 cat tst
+cat >tst
 cat txt
-cat ~/.bash_history
 cd
-cd '第一次公开课视频和资料(9月7日)'
+cd ~
+cd _
 cd -
+cd /
 cd .
 cd ..
 cd ../
-cd ../../bm
-cd ../favo
-cd ../favo/
-cd ../favo1
-cd ../hmfv
-cd ../hmfv/
-cd ../hmfv/ ; git branch -D tmp ; cd -
-cd ../noname/
-cd ../oad
-cd ../oad/
-cd ../test/
-cd ../tool
-cd ../tool/
-cd ../trygit
-cd ../trygit/
-cd ../trygit2
-cd ../wkfv/
-cd ../zz
-cd .git
-cd /
+cd bak-i/
 cd /bin
+cd bm
+cd ../../bm
+cd c
 cd /c
 cd /c/DISK-D/trygit
 cd /c/DISK-D/trygit/
-cd /d/pam-db-srcwc/Schema
-cd /d/pam-db-srcwc/View
 cd /dev/fd
+cd /d/pam-db-srcwc/Schema
+cd D:\pam-db-srcwc\Schema
+cd /d/pam-db-srcwc/View
 cd /e
 cd /e/
 cd /e/bm
 cd /e/com/
 cd /e/favo/
+cd /etc/
 cd /e/tool
 cd /e/tool/
 cd /e/w
 cd /e/wkfv/
-cd /etc/
+cd favo
+cd ../favo
+cd ../favo/
+cd favo/
+cd ../favo1
 cd /g
+cd .git
+cd ../hmfv
+cd ../hmfv/
+cd ../hmfv/ ; git branch -D tmp ; cd -
 cd /i
 cd /i/bak-i
 cd /i/bak-i/
@@ -150,34 +122,42 @@ cd /i/bak-i/trygit/
 cd /i/bak-i/wkfv/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/第一次公开课视频和资料(9月7日)
-cd /tool
-cd /w/oth-v/
-cd /w/oth-v/true detetive
-cd D:\pam-db-srcwc\Schema
-cd _
-cd bak-i/
-cd bm
-cd c
-cd favo
-cd favo/
+cd ../noname/
 cd noname/
 cd oad
+cd ../oad
+cd ../oad/
 cd script/
+cd ../test/
 cd test/
 cd tool
+cd /tool
+cd ../tool
+cd ../tool/
 cd tool/
 cd true\ detetive/
+cd ../trygit
+cd ../trygit/
 cd trygit2
+cd ../trygit2
 cd unix
 cd wkfv
+cd ../wkfv/
 cd wkfv/
-cd ~
-chg.sh1
+cd /w/oth-v/
+cd /w/oth-v/true detetive
+cd ../zz
+cd '第一次公开课视频和资料(9月7日)'
+>chgd.sh
 chgd.sh
+chgd.sh1
 chgd.sh ../hmfv
 chgd.sh ../hmfv/
 chgd.sh /i/bak-i/hmfv
-chgd.sh1
+ chg.sh1
+chg.sh1
+chmod 644 hist.txt
+chmod 744 *
 clear
 clera
 cmdcnt.sh $(history | cut -c2-)
@@ -186,118 +166,118 @@ cmdcnt.sh hist.txt | type
 cmdcnt.sh hist.txt | xargs type
 comm -12 sub.txt pre.txt
 cp * ../
-cp --help
-cp -R ../favo1/.git ./
-cp -R favo favo1
-cp ../favo ../favo1
+cp chgd.sh chg.sh1
+cp chg.sh1 ../favo
 cp ../favo1/,git ./
 cp ../favo1/.git ./
-cp ../tool/dif.sh ../tool/dif.sh2
 cp ./favo favo1
-cp chg.sh1 ../favo
-cp chgd.sh chg.sh1
+cp ../favo ../favo1
 cp favo favo1
-cp h* test/
+cp --help
 cp hist.sh crsp.sh
+cp h* test/
+cp -R ../favo1/.git ./
+cp -R favo favo1
+cp ../tool/dif.sh ../tool/dif.sh2
 cta chgd.sh
 cta trace_UAT_sql.sh
 cut --help
 date
 date +%a
-date +%y%m%d
-date +%y%m%d%H%M%S >> somthing.txt
-date --date='1 day ago'
-date --date='1 days ago'
 date --date='14-6-16'
 date --date='14-6-18'\
 date --date='14-6-26 3 days ago'
 date --date='14-6-26 4 days ago'
 date --date='14-6-26 4 days ago' +%w
+date --date='14-6-26' +%d
+date --date='14-6-26' +%D
 date --date='14-6-26 last MON'
 date --date='14-6-26 last SUN'
-date --date='14-6-26' +%D
-date --date='14-6-26' +%d
 date --date='14-6-26' +%w
 date --date='14-6-28' +%w
-date --date='14-6-29 -7 days ago'
 date --date='14-6-29 6 days ago'
+date --date='14-6-29 -7 days ago'
 date --date='14-6-29 7 days ago'
 date --date='14-6-29' +%w
+date --date='1 day ago'
+date --date='1 days ago'
 date --date='2014 06 16'
 date --date='2014- 06- 16'
 date --date='2014-06-16'
-date --date='MON'
 date --date='last MON '
-date --date='last MON befor 14-6-18'
-date --date='last MON before 14-6-18'
 date --date='last MON'
 date --date='last MON' +
+date --date='last MON befor 14-6-18'
+date --date='last MON before 14-6-18'
+date --date='MON'
 date --date='one day before 14-6-18'
 date --date='one days ago'
 date --help
 date -s '14-6-18' -d 'last MON'
-date -s 'last MON'
 date -s 14-6-23
+date -s 'last MON'
 date -s last MON
+date +%y%m%d
+date +%y%m%d%H%M%S >> somthing.txt
 dd if=tst
 df
 df --help
-dif.sh
-diff --help
 diff bookmarks_14-6-23.html bookmarks_14-6-22.html
+diff --help
 diff hist.txt  ./hist.txt
 diff sub.txt pre.txt
+dif.sh
 dii
 disown --help
+du .
 du *
 du *.7z
-du --help
 du -c .
-du -c . | tail -n1
 du -ch
 du -ch .
 du -ch tool
+du -c . | tail -n1
 du -h .
+du --help
 du -s
-du -s *.7z
 du -s .
-du -s trygit
-du -s trygit trygit2
-du -s trygit2
+du -s *.7z
 du -sh
 du -sh .
 du -sh tool
 du -sh wkfv
-du .
+du -s trygit
+du -s trygit2
+du -s trygit trygit2
 du wkfv
-echo "sed -e  's/data\:.*\">/\">/' " > /i/bak-i/tool/cleanicon.sh
-echo $$
-echo $$;tst;sh tst;. tst;source tst
+echo '
 echo $' \''
-echo $(#abc)
-echo $HISTSIZE
+echo $$
+echo \'
+echo a
 echo $abc
+echo $(#abc)
+echo ${#abc}
+echo ${abc}
 echo $bmlog
 echo $cm
 echo $dir
+echo $HISTSIZE
 echo $nex
 echo $pre
-echo $thea
-echo $var
-echo ${#abc}
-echo ${abc}
-echo '
+echo "sed -e  's/data\:.*\">/\">/' " > /i/bak-i/tool/cleanicon.sh
 echo '' > sub.txt
-echo \'
-echo a
+echo $thea
+echo $$;tst;sh tst;. tst;source tst
+echo $var
 egrep --help
 elm --help
 env
 env |sort
 eval "echo a"
-exec --help
 exec 1>&4
 exec 4>&1
+exec --help
 exec >r
 exec r>&1
 exit
@@ -313,24 +293,16 @@ for a in $(kill -l);do echo $a; done;
 fork --help
 gcc
 gcc --help
-git  remote
-git  remote -v
-git  status
-git --global
-git --help config
-git --help ls
-git ../trygit
-git /i/bak-i/test/
 git add
 git add *
-git add -A
 git add -a
+git add -A
 git add a.txt
 git add bookmarks_14-6-16.html
 git add bookmarks_14-6-4.html
 git add bookmarks_14-6-5.html
-git add chg.sh1
 git add chgd.sh
+git add chg.sh1
 git add cmdcnt.sh
 git add dif.sh
 git add f.txt
@@ -345,36 +317,36 @@ git blame chgd.sh
 git brach
 git brach -d master
 git branch
-git branch  master
-git branch --help
+git branch -a
+git branch checkout master
 git branch -D checkout
 git branch -D fea
-git branch -D master
-git branch -D tmp
-git branch -a
 git branch -d master
+git branch -D master
 git branch -d sc
 git branch -d somefea
 git branch -d somefea2
 git branch -d somefea3onfea2
+git branch -D tmp
+git branch fea
+git branch --help
+git branch master
+git branch  master
 git branch -m master
 git branch -r master
-git branch checkout master
-git branch fea
-git branch master
 git branch somefea
 git branch somefea2
 git branch somefea3onfea2
 git branch tmp
 git branch tryf3
 git branch tryf4
-git check out
 git checkout
-git checkout -- a.txt
-git checkout -b somefea2
+git check out
 git checkout 20cceed
+git checkout -- a.txt
 git checkout bm.html
 git checkout bookmarks_14-6-16.html
+git checkout -b somefea2
 git checkout e5115fa
 git checkout fea
 git checkout fea]
@@ -395,8 +367,8 @@ git clean
 git clean -df
 git clean -f
 git clone file:///c/DISK-D/trygit
-git clone file:///c/DISK-D/trygit ../trygit2
 git clone file:///c/DISK-D/trygit trygit2
+git clone file:///c/DISK-D/trygit ../trygit2
 git clone https://github.com/turnon/favo.git
 git clone https://github.com/turnon/favo.git ./favo
 git clone https://github.com/turnon/noname.git
@@ -405,34 +377,35 @@ git clone https://github.com/turnon/wkfv.git
 git comfig --global use.name 'k'
 git comm -12 sub.txt pre.txt
 git commit
-git commit  a.txt
-git commit  bookmarks_14-6-16.html
-git commit  somthing.txt
-git commit --amend
-git commit -a -m "bk"
-git commit -a -m "in one line"
-git commit -a -m $(date)
+git commit -a hist.txt
 git commit -a -m 'add jp drama'
 git commit -a -m 'after extract'
 git commit -a -m 'bk'
-git commit -a -m 'hist bk without space'
+git commit -a -m "bk"
 git commit -a -m'bk'
-git commit -a hist.txt
+git commit -a -m 'change mode'
+git commit -a -m $(date)
+git commit --amend
+git commit -a -m 'hist bk without space'
+git commit -a -m "in one line"
+git commit  a.txt
+git commit a.txt
+git commit  bookmarks_14-6-16.html
+git commit bookmarks_14-6-16.html
+git commit chgd.sh
+git commit hist.txt
 git commit -m "bk after new script"
-git commit -m "replace return"
 git commit -m 'bk with new shell script'
 git commit -m 'command count'
 git commit -m 'err at bottom'
 git commit -m 'extract sed'
 git commit -m 'film'
 git commit -m 'remove space'
+git commit -m "replace return"
 git commit -m 'script'
-git commit -v
-git commit a.txt
-git commit bookmarks_14-6-16.html
-git commit chgd.sh
-git commit hist.txt
+git commit  somthing.txt
 git commit somthing.txt
+git commit -v
 git config
 git config --get-color
 git config --gloabal
@@ -443,19 +416,19 @@ git config --global use.name 'k'
 git config --global user.email "ken@home.com"
 git config --global user.email 'k@wh.com'
 git config --global user.email 'z@z-PC.com'
-git config --global user.name "ken"
-git config --global user.name 'k'
-git config --global user.name 'z'
 git config --global user.name='k'
+git config --global user.name 'k'
+git config --global user.name "ken"
+git config --global user.name 'z'
 git config -l
 git config user.email 'l@l.com'
 git config user.name 'l'
 git diff
-git diff  c29a28a ff62987
 git diff a
-git diff a.txt
 git diff a950d3b 870efc7
+git diff a.txt
 git diff bookmarks_14-6-23.html bookmarks_14-6-22.html
+git diff  c29a28a ff62987
 git diff d47b1e5 f85c6bb
 git diff dd46a03 26f3401 | grep 'HREF' > tmp.$$
 git diff fcf8449 c29428a
@@ -470,30 +443,31 @@ git diff somthing.txt
 git diff sub.txt pre.txt
 git diff tmp
 git diff tmp | grep '^-'
-git diff tmp | grep -c '^+'
 git diff tmp | grep -c '^-'
+git diff tmp | grep -c '^+'
 git diff tryf3
 git fetch
-git fetch --all
-git fetch -all
 git fetch a
+git fetch -all
+git fetch --all
 git fetch hmfv master:tmp
 git fetch noname
 git fetch origin
-git fetch origin  master :master
-git fetch origin  tryf3:master
-git fetch origin  tryf4:master
-git fetch origin  tryf4:tryf3
 git fetch origin fea
 git fetch origin fea:fea
 git fetch origin master
+git fetch origin  master :master
 git fetch origin master:master
 git fetch origin master:sc
 git fetch origin master:tmp
+git fetch origin  tryf3:master
 git fetch origin tryf3:master
 git fetch origin tryf3:tryf3
+git fetch origin  tryf4:master
 git fetch origin tryf4:master
 git fetch origin tryf4:tmp
+git fetch origin  tryf4:tryf3
+git --global
 git help
 git help add
 git help branch
@@ -501,6 +475,7 @@ git help cd
 git help checkout
 git help clean
 git help commit
+git --help config
 git help config
 git help diff
 git help du
@@ -508,6 +483,7 @@ git help fetch
 git help gitk
 git help index
 git help log
+git --help ls
 git help ls
 git help merge
 git help reflog
@@ -517,33 +493,37 @@ git help revert
 git help script
 git help tar
 git https://github.com/turnon/noname.git
+git /i/bak-i/test/
 git init
+gitk
+gitk ../hmfv
+gitk ../hmfv/
 git log
+git log 8d82ec7
+git log 8d82ec7 --oneline
 git log  --graph
 git log --graph
 git log --graph --oneline
-git log --one-line
+git log -oneline
 git log --oneline
-git log --oneline --graph
+git log --one-line
 git log --oneline bookmarks_14-6-4.html
+git log --oneline --graph
 git log --oneline | grep '[0-9]$'
 git log --oneline | grep '[0-9]$' | awk '{print $1}'
 git log --oneline | grep '[0-9]$' | awk '{print $1}' > pre.txt
 git log --oneline | grep '[0-9]$' | awk '{print $1}' >> sub.txt
 git log --oneline | sort
 git log --onrline
-git log --stat
-git log -oneline
 git log -stat
-git log 8d82ec7
-git log 8d82ec7 --oneline
+git log --stat
 git merge --abort
-git merge --squash fea
 git merge fea
 git merge fea master
 git merge master fea
 git merge somefea2
 git merge somefea3onfea2
+git merge --squash fea
 git merge tmp
 git mergetool
 git pull origin
@@ -554,123 +534,128 @@ git push noname
 git push oad  master:master
 git push oad master:master
 git push origin
-git push origin  :tryf4
 git push origin master:master
+git push origin  :tryf4
 git push wkfv master:master
 git push wpfv
 git push wpfv master:master
 git rabase --continue
 git rebase --abort
-git rebase --continue
 git rebase -continue
+git rebase --continue
 git rebase master
 git reflog
 git remote
+git  remote
 git remote -a
-git remote -b
-git remote -v
 git remote add -f https://github.com/turnon/oad.git
 git remote add -f https://github.com/turnon/wkfv.git
 git remote add hmfv https://github.com/turnon/hmfv.git
 git remote add https://github.com/turnon/oad.git
+git remote add "https://github.com/turnon/tool.git"
+git remote add https://github.com/turnon/tool.git
 git remote add https://github.com/turnon/wkfv.git
 git remote add https://github.com/turnon/wpfv.git
 git remote add oad https://github.com/turnon/oad.git
 git remote add wkfv https://github.com/turnon/wkfv.git
 git remote add wpfv https://github.com/turnon/wpfv.git
+git remote -b
+git remote --help
 git remote https://github.com/turnon/oad.git
+git remote https://github.com/turnon/tool.git
 git remote rename origin noname
 git remote show origin
+git  remote -v
+git remote -v
 git reset --hard
 git reset --hard HEAD
 git reset HEAD
-git reset HEAD bookmarks_14-6-16.html
 git reset HEAD~1
 git reset HEAD~2
-git revert --abort
-git revert -abort
+git reset HEAD bookmarks_14-6-16.html
 git revert 1e920f7
 git revert 71e
 git revert 71e192e
 git revert 71e192e2d
+git revert -abort
+git revert --abort
+git revert b0cba2c
 git revert HEAD~1
 git revert HEAD~2
-git revert b0cba2c
-git rm --cached somthing
-git rm -f bm.html
 git rm bm.html
 git rm bookmarks_14-6-16.html
+git rm --cached somthing
 git rm chg.sh1
+git rm -f bm.html
 git rm hist.txt
 git status
+git  status
+git status]
 git status --oneline
 git status --online
-git status]
 git staus
 git stuas
 git svn
 git tag
-gitk
-gitk ../hmfv
-gitk ../hmfv/
+git ../trygit
 got log
-grep '' hist.txt
 grep '2208' *
 grep '2209' *
 grep '2210' *
-grep 'ICON' bookmarks_14-7-13.html
-grep 'ICON=[\"]*[\"]' bookmarks_14-7-13.html  | head -n2
-grep '[ ]$' hist.txt
-grep '^M' hist.txt
 grep 'chg_ot_type' *
 grep 'count' *
-grep 'data\:' bookmarks_14-7-13.html | head -n2
-grep 'data\:*' bookmarks_14-7-13.html | head -n2
-grep 'data\:*+' bookmarks_14-7-13.html | head -n2
-grep 'data\:*{+}' bookmarks_14-7-13.html | head -n2
+grep 'data\:>' bookmarks_14-7-13.html | head -n2
 grep 'data\:.' bookmarks_14-7-13.html | head -n2
 grep 'data\:.*' bookmarks_14-7-13.html | head -n2
-grep 'data\:.*\"' bookmarks_14-7-13.html | head -n2
 grep 'data\:.*\">' bookmarks_14-7-13.html | head -n2
+grep 'data\:.*\"' bookmarks_14-7-13.html | head -n2
 grep 'data\:.*\"\>' bookmarks_14-7-13.html | head -n2
 grep 'data\:.+' bookmarks_14-7-13.html | head -n2
-grep 'data\:>' bookmarks_14-7-13.html | head -n2
-grep 'data\:[*+]' bookmarks_14-7-13.html | head -n2
-grep 'data\:[*]' bookmarks_14-7-13.html | head -n2
+grep 'data\:' bookmarks_14-7-13.html | head -n2
 grep 'data\:[.]+' bookmarks_14-7-13.html | head -n2
+grep 'data\:[*]' bookmarks_14-7-13.html | head -n2
+grep 'data\:[*+]' bookmarks_14-7-13.html | head -n2
+grep 'data\:*' bookmarks_14-7-13.html | head -n2
+grep 'data\:*{+}' bookmarks_14-7-13.html | head -n2
+grep 'data\:*+' bookmarks_14-7-13.html | head -n2
+grep -=help
+grep --help
 grep 'hist' hist.txt
+grep '' hist.txt
+grep '[ ]$' hist.txt
+grep --hrlp
+grep 'ICON' bookmarks_14-7-13.html
+grep 'ICON=[\"]*[\"]' bookmarks_14-7-13.html  | head -n2
+grep '^M' hist.txt
+grep -n '[ ]$' hist.txt
 grep 'remote' ../tool/hist.txt
 grep 'sy' *
 grep 'v' hist.txt
-grep --help
-grep --hrlp
-grep -=help
-grep -n '[ ]$' hist.txt
-grep -v '<<<<' tmp.hist >hist.txt
 grep -v '====' hist.txt >tmp.hist
 grep -v '>>>>' hist.txt >tmp.hist
+grep -v '<<<<' tmp.hist >hist.txt
 gtk
 head -n10 hist.txt
 head -n50 hist.txt
-hist.sh
 history
-history --help
-history -w
 history | awk '{print $2}'
 history | awk '{print $2}' | sort -u > hist.txt
 history | cut -c8-
 history | cut -c8- >> hist.txt
-history | cut -c8- | sort -u > hist.txt
 history | cut -c8- | sort -u >> hist.txt
+history | cut -c8- | sort -u > hist.txt
 history | cut -f2-
 history | head -n10
+history --help
 history | sort | uniq -c
 history | tail -n10
 history | tail -n15 >> chgd.sh
+history -w
+. hist.sh
+hist.sh
 hitsory -w
 jobs
 jpbs
-kill --help
 kill -1
 kill -1 14488
 kill -1 14860
@@ -679,17 +664,20 @@ kill -1 161
 kill -1 16136
 kill -1 17576
 kill -1 18092
-kill -9 16092
-kill -9 17576
-kill -l
 kill 15180
 kill 15608
+kill -9 16092
+kill -9 17576
+kill --help
+kill -l
 less
 less --help
+less hist.txt
 less <(ls -al)
 ll
-ll ..
+\ll
 ll /
+ll ..
 ll | awk '{$1="" ;print $0}'
 ll | awk '{$1="" ;print $0}' | cut -c2-
 ll | awk '{$2="" ;print $0}'
@@ -697,81 +685,82 @@ ll | grep 'u'
 ln
 ln --help
 ls
+\ls
+ls /
+ls ..
+ls ../
+ls -1
 ls *.7z |  du -s
 ls *.7z |  du -sh
 ls *.7z |  xargs du -ch
-ls *.7z |  xargs du -sh
 ls *.7z | xargs du -s
-ls --full-time
-ls --full-time |  ;
-ls --full-time | awk '{ print $9  }'
-ls --full-time | cut -f9
-ls --fuul-time
-ls --help
-ls -1
-ls -A
-ls -Al /
-ls -R >t
+ls *.7z |  xargs du -sh
 ls -a
-ls -al
-ls -al ../favo1
-ls -al /
-ls -al /bin
-ls -alc
-ls -l
-ls ..
-ls ../
-ls ../tool/
-ls /
 ls /a
+ls -A
 ls /abc
 ls /abc 2>/dev/null
 ls /abc 2>/dev/null || echo 'err'
-ls /c
-ls /z
-ls ^t
-ls ^t*
+ls -al
+ls -al /
+ls -Al /
+ls -al /bin
+ls -alc
+ls -al ../favo1
 ls b*
 ls b* | cut -d_ -f1
 ls b* | cut -d_ -f2
 ls bo*
 ls bookm*
+ls /c
+ls | cut -d_ -f1
+ls | cut -d_ -f2
+ls --full-time
+ls --full-time |  ;
+ls --full-time | awk '{ print $9  }'
+ls --full-time | cut -f9
+ls --fuul-time
+ls | grep 'u'
+ls --help
+ls -l
+ls -R >t
 ls t
+ls ^t
+ls ^t*
 ls t*
 ls t* -d
 ls t* -d |  du -s
-ls t* -d |  xargs du -s
 ls t* -d | du -s
-ls t* -d | xargs du -s
 ls t* | du
 ls t* | du -c
 ls t* | du -d
 ls t* | du -s
-ls | cut -d_ -f1
-ls | cut -d_ -f2
-ls | grep 'u'
+ls t* -d |  xargs du -s
+ls t* -d | xargs du -s
+ls ../tool/
 ls | vi -
+ls /z
 mailx --help
 man cat
 man du
+man history
 man ls
-mkdir --help
 mkdir bak-i/favo
+mkdir --help
 mkdir oad
 mkdir test
 mkdir wkfv
 mkfifo --help
 more
-more <$(ls -al)
 more <(ls -al)
+more <$(ls -al)
 mount
 mount --help
-mv --help
-mv . ../wkfvtmp
 mv a.txt a.sh
 mv b.txt a.txt
-mv chg.sh1 chgd.sh
 mv chgd.sh1 chgd.sh
+mv chg.sh1 chgd.sh
+mv --help
 mv hist.17856 hist.txt
 mv hist.3660  hist.txt
 mv hist.tmp hist.txt
@@ -781,10 +770,11 @@ mv script.tar.140609171407  /dev/null
 mv somthing somthing.txt
 mv test test.sh
 mv tmp.hist hist.txt
-mv wkfv wkfvtmp
+mv . ../wkfvtmp
 mv wkfvtmp/wkfv ./wkfv
-nex=$(echo $bmlog | cut -d' ' -f2, )
+mv wkfv wkfvtmp
 nex=$(echo $bmlog | cut -d' ' -f2- )
+nex=$(echo $bmlog | cut -d' ' -f2, )
 nl --help
 nohup --help
 nohup ls
@@ -793,23 +783,31 @@ parallel --help
 parrel --help
 paste --help
 paste pre.txt sub.txt > com.txt
+( ping www.ibm.com & )
+(ping www.ibm.com & ;)
+(ping www.ibm.com &;)
+(ping www.ibm.com &)
+ ping www.ibm.com >t &
+( ping www.ibm.com >t & )
 pre=$(echo $bmlog | cut -d' ' -f1)
 pre=$(echo $bmlog | cut -f1)
 ps
-ps --help
+ps | awk '/sleep/ {print $1}'
+ps | awk '/sleep/ {print "kill -9",$1}'
+ps | awk '/sleep/ {print \"kill -9\",$1}'
 ps -e
 ps -ef
 ps -elf
 ps -f
+ps --help
 ps -l
 ps -p $$
-ps | awk '/sleep/ {print "kill -9",$1}'
-ps | awk '/sleep/ {print $1}'
-ps | awk '/sleep/ {print \"kill -9\",$1}'
 pushd
 pwd
+>r
 read --help
 read -t 5 abc
+rm cmdtmp.3804
 rm -df .git
 rm -df trygit2
 rm -f ?*
@@ -818,22 +816,22 @@ rm -f bm.html
 rm -f dif.18832
 rm -f dif.19596
 rm -f dif.20208
-rm -f dif.sh2
 rm -f difdetail.18648 difsum.18648
+rm -f dif.sh2
 rm -f pre.txt sub.txt com.txt
 rm -f script.tar.140609171407
 rm -f somthing.txt
 rm -f tmp.3368
 rm -f trygit2
-rm -rf .git
-rm -rf favo
-rm -rf script
-rm -rf trygit2
-rm -rf wkfvtmp
-rm cmdtmp.3804
 rm hist.txt
 rm hist.txt1
 rm r
+rm -rf favo
+rm -rf .git
+rm -rf script
+rm -rf tool
+rm -rf trygit2
+rm -rf wkfvtmp
 rm somthing.txt
 rm t
 rm t s
@@ -841,41 +839,41 @@ rm tst
 rpm --help
 rpm -ivh abc
 script
-sed --help
+sed -e 's/[]$//'
 sed -e  's/data\:.*\">//' bookmarks_14-7-13.html > $$.html
 sed -e  's/data\:.*\">/\">/' bookmarks_14-7-13.html > $$.html
-sed -e 's/ICON=[\"]*[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html
+sed -e 's/data\:>//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/[ ]$//' hist.txt > hist.txt1
+sed -e 's/[]$//' hist.txt > hist.txt1
+sed -e 's/ICON[\=][\"][*]{0}[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"]*{0}[\"]//g' bookmarks_14-7-13.html  > $$.html
 sed -e 's/ICON=[\"]*[\"]//g' bookmarks_14-7-13.html  | head -n2
 sed -e 's/ICON=[\"]*[\"]//g' bookmarks_14-7-13.html  | head -n50
+sed -e 's/ICON=[\"]*[\"]//g' bookmarks_14-7-13.html  > $$.html
 sed -e 's/ICON[\=]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"].+[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"][.]+[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"][*]+[\"]//g' bookmarks_14-7-13.html  > $$.html
+sed -e 's/ICON[\=][\"][\"]//g' bookmarks_14-7-13.html  > $$.html
 sed -e 's/ICON[\=][\"]*[\"]//g' bookmarks_14-7-13.html  > $$.html
 sed -e 's/ICON[\=][\"]*{*}[\"]//g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/ICON[\=][\"]*{0}[\"]//g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/ICON[\=][\"].+[\"]//g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/ICON[\=][\"]//g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/ICON[\=][\"][*]+[\"]//g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/ICON[\=][\"][*]{0}[\"]//g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/ICON[\=][\"][.]+[\"]//g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/ICON[\=][\"][\"]//g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/[ ]$//' hist.txt > hist.txt1
-sed -e 's/[]$//'
-sed -e 's/[]$//' hist.txt > hist.txt1
-sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html
-sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html  > $$.html
-sed -e 's/data\:>//g' bookmarks_14-7-13.html  > $$.html
+sed --help
 sendmail --help
 set
-set +x
 set --help
-set -x
 setid --help
-sh -v tst
-sh -x tst
-sh chg.sh1
+set -x
+set +x
 sh chgd.sh
+sh chg.sh1
 sh hist.sh
 sh test.sh
 sh tst
+sh -v tst
+sh -x tst
 simtop
 simtop 2>err
 sleep 10 &
@@ -883,53 +881,64 @@ sleep 5 &
 sleep 50 &
 sleep 60 &
 sleep 600 &
+> somthing
 sort --help
+sort hist.txt | uniq | head -n10
 sort -u hist.txt
-sort -u hist.txt  > hist.txt
-sort -u hist.txt > hist.$$
-sort -u hist.txt > hist.tmp
 sort -u hist.txt | head
 sort -u hist.txt | head -n10
 sort -u hist.txt | head -n50
+sort -u hist.txt > hist.$$
+sort -u hist.txt > hist.tmp
+sort -u hist.txt  > hist.txt
 sort -u jp.4896 >jp.txt
 sort -u jp.txt > jp.$$ ; mv jp.$$ jp.txt
-sort -u jp.txt > jp.$$ ; sleep 5 ; mv jp.$$ jp.txt
 sort -u jp.txt >jp.$$ ; mv jp.$$ jp.txt
 sort -u jp.txt | jp.$$ ; mv jp.$$ jp.txt
-sort hist.txt | uniq | head -n10
+sort -u jp.txt > jp.$$ ; sleep 5 ; mv jp.$$ jp.txt
 source --help
 source tst
 stat a
 strace
+> sub.txt
+'' > sub.txt
 sync
-tac --help
 tac bm.html
+tac --help
 tar --help
-tar -xf script.szp52.140707145239
 tar tvf script.szp52.140707145239
 tar tvf script.tar.140609171407
+tar -xf script.szp52.140707145239
 tar xf script.tar.140609171407
 tar xvf script.szp52.140707145239 .
 test --help
-test txt
 test.sh
 test.sh txt
-thea=$( grep -c '^[+]' tmp.$$ )
+test txt
 thea=$( grep -c '^[-]' tmp.$$ )
-time ../tool/dif.sh
+thea=$( grep -c '^[+]' tmp.$$ )
 time ls
 time ls and .
+time ../tool/dif.sh
+> tobeclean
+../tool/chgd.sh
+../tool/chgd.sh .
+../tool/crsp.sh f.txt | sort -u > f.$$ ; mv f.$$ f.txt
+../tool/crsp.sh jp.txt > jp.$$
+../tool/crsp.sh jp.txt | sort -u jp.$$;mv jp.$$ jp.txt
+../tool/dif.sh
+../tool/dif.sh .
 top
-touch --help
-touch bookmarks_14-6-25.html --mtime '140630'
-touch bookmarks_14-6-25.html --mtime='140630'
-touch bookmarks_14-6-25.html -m --time '140630'
-touch bookmarks_14-6-25.html -m --time='140630'
 touch bookmarks_14-6-25.html -m -d '140630'
+touch bookmarks_14-6-25.html --mtime='140630'
+touch bookmarks_14-6-25.html --mtime '140630'
+touch bookmarks_14-6-25.html -m --time='140630'
+touch bookmarks_14-6-25.html -m --time '140630'
 touch bookmarks_14-6-25.html -mtime '140630'
-tr --help
+touch --help
 trap --help
 trap -l
+tr --help
 tst
 tst &
 tst 2>&1
@@ -937,52 +946,55 @@ tst 2>&3 3>t
 tst 3>&2 2>&1 1>&3 >t 2>s
 tst 3>&2 3>t
 tst 4>r
-tst > t
+tst;echo $abc
 tst >r
+tst;sh tst;. tst;source tst
+tst > t
 tst >t 2>&1
 tst >t 2>s
-tst >t t>s
-tst;echo $abc
-tst;sh tst;. tst;source tst
 tst;tst
-type '|'
-type .
+tst >t t>s
 type ;
+type .
+type '|'
+type git
 type HEAD
 type ls
 type mount
 type rpm
 type test
-vi ../tool/dif.sh
+( var=abc )
 vi a.txt
-vi chg.sh1
 vi chgd.sh
+vi chg.sh1
 vi cleanicon.sh
 vi cmdcnt.sh
 vi crsp.sh
 vi dif.sh
 vi hist.sh
 vi hist.txt
-vi sim top
 vi simtop
+vi sim top
 vi somthing.txt
 vi test
 vi test.sh
+vi ../tool/dif.sh
 vi tst
 vi tst1
 vi txt
 vo a.txt
 wait --help
 watch cat chgd.sh
-wc --help
-wc -l hist.txt
 wc bookmarks_14-7-13.html 3368.html
-wc hist.txt
-wc r
+wc --help
 wc- --help
-which ls
+wc hist.txt
+wc -l hist.txt
+wc r
 whichis ls
+which ls
 while true do cat chgd.sh done;
 while true do cat chgd.sh done;  l
 xargs
 xargs --help
+yum install man
