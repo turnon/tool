@@ -145,9 +145,12 @@ cd /i/bak-i/favo/
 cd /i/bak-i/hmfv/
 cd /i/bak-i/oad
 cd /i/bak-i/test/
+cd /i/bak-i/too
+cd /i/bak-i/tool
 cd /i/bak-i/tool/
 cd /i/bak-i/trygit/
 cd /i/bak-i/wkfv/
+cd /j/pic-j
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/
 cd /j/std-j/传智播客-1307月份javascript从入门到精通/9/第一次公开课视频和资料(9月7日)
 cd /tool
@@ -171,6 +174,7 @@ cd trygit2
 cd unix
 cd wkfv
 cd wkfv/
+cd xi
 cd ~
 chg.sh1
 chgd.sh
@@ -202,8 +206,10 @@ cp cmdcnt.sh cmdcnt.sh1
 cp favo favo1
 cp h* test/
 cp hist.sh crsp.sh
+cp si*/* xi/
 cta chgd.sh
 cta trace_UAT_sql.sh
+ctname.sh .
 cut --help
 date
 date +%a
@@ -230,6 +236,9 @@ date --date='2014 06 16'
 date --date='2014- 06- 16'
 date --date='2014-06-16'
 date --date='MON'
+date --date='May 17 17:49'
+date --date='May 17 17:49' +%y%m%d
+date --date='May 17 17:49' +%y%m%d%H%M%S
 date --date='last MON '
 date --date='last MON befor 14-6-18'
 date --date='last MON before 14-6-18'
@@ -335,6 +344,7 @@ git add bookmarks_14-6-5.html
 git add chg.sh1
 git add chgd.sh
 git add cmdcnt.sh
+git add ctname.sh
 git add dif.sh
 git add f.txt
 git add hist.sh
@@ -431,6 +441,7 @@ git commit -m 'bk'
 git commit -m 'command count'
 git commit -m 'err at bottom'
 git commit -m 'extract sed'
+git commit -m 'file create time'
 git commit -m 'film'
 git commit -m 'remove space'
 git commit -m 'script'
@@ -733,6 +744,7 @@ ls -al ../favo1
 ls -al /
 ls -al /bin
 ls -alc
+ls -cl
 ls -l
 ls ..
 ls ../
@@ -751,6 +763,14 @@ ls b* | cut -d_ -f1
 ls b* | cut -d_ -f2
 ls bo*
 ls bookm*
+ls si*
+ls si* --full-time
+ls si* --full-timr
+ls si* -F
+ls si* -al
+ls si* -al | grep '^-'
+ls si* -al | grep '^-' | wc -l
+ls si* -cl
 ls t
 ls t*
 ls t* -d
@@ -766,6 +786,7 @@ ls | cut -d_ -f1
 ls | cut -d_ -f2
 ls | grep 'u'
 ls | vi -
+ls | wc -w
 mailx --help
 man cat
 man du
@@ -777,6 +798,7 @@ mkdir bak-i/favo
 mkdir oad
 mkdir test
 mkdir wkfv
+mkdir xi
 mkfifo --help
 more
 more <$(ls -al)
@@ -981,6 +1003,7 @@ type rpm
 type test
 vi ../tool/dif.sh
 vi .git/config
+vi /i/bak-i/tool/ctname.sh
 vi a.txt
 vi chg.sh1
 vi chgd.sh
@@ -988,6 +1011,7 @@ vi cleanicon.sh
 vi cmdcnt.sh
 vi cmdcnt.sh1
 vi crsp.sh
+vi ctname.sh
 vi dif.sh
 vi hist.sh
 vi hist.txt
