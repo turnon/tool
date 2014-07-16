@@ -67,6 +67,7 @@ cat a.txt <<EOF
 cat bookmarks_14-6-16.html
 cat chgd.sh
 cat crsp.sh
+cat ctname.sh
 cat dif.sh
 cat dif.sh -
 cat err
@@ -190,6 +191,7 @@ cmdcnt.sh $(history | cut -c2-)
 cmdcnt.sh hist.txt
 cmdcnt.sh hist.txt | type
 cmdcnt.sh hist.txt | xargs type
+cmdcnt.sh ~/.bash_history
 comm -12 sub.txt pre.txt
 cp * ../
 cp --help
@@ -209,7 +211,10 @@ cp hist.sh crsp.sh
 cp si*/* xi/
 cta chgd.sh
 cta trace_UAT_sql.sh
+ctname.sh
 ctname.sh .
+ctname.sh ..
+ctname.sh ../tmp
 cut --help
 date
 date +%a
@@ -430,6 +435,7 @@ git commit -a -m 'after extract'
 git commit -a -m 'bk'
 git commit -a -m 'change mode'
 git commit -a -m 'do not use tmp file'
+git commit -a -m 'finish ctname'
 git commit -a -m 'hist bk without space'
 git commit -a -m 'sort number'
 git commit -a -m'bk'
@@ -564,6 +570,7 @@ git merge master fea
 git merge somefea2
 git merge somefea3onfea2
 git merge tmp
+git merger tmp
 git mergetool
 git pull origin
 git pull origin fea:master
@@ -745,6 +752,13 @@ ls -al /
 ls -al /bin
 ls -alc
 ls -cl
+ls -cl --full-time
+ls -cl --full-time $1 | awk '{ $1=" "; $2=" "; $3=" "; $4=" "; $5=" "; print $0}' | awk '{}'
+ls -cl --full-time $1 | cut -c6-| awk '{print $1" "$2" "$3" "$4" "$5" "$6}'
+ls -cl --full-time $1 | cut -d" " -f6-
+ls -cl --full-time $1 | cut -d"\t" -f6-
+ls -cl --full-time $1 | cut -f6-
+ls -cl --full-time $1 | cut -f6-| awk '{print $1" "$2" "$3" "$4" "$5" "$6}'
 ls -l
 ls ..
 ls ../
@@ -864,6 +878,7 @@ rm -f script.tar.140609171407
 rm -f somthing.txt
 rm -f tmp.3368
 rm -f trygit2
+rm -rf ../tmp
 rm -rf .git
 rm -rf favo
 rm -rf script
@@ -902,7 +917,6 @@ sed -e 's/[ ]$//' hist.txt > hist.txt1
 sed -e 's/[]$//'
 sed -e 's/[]$//' hist.txt > hist.txt1
 sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html
-sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html 
 sed -e 's/data\:.+\"\>/\"\>/g' bookmarks_14-7-13.html  > $$.html
 sed -e 's/data\:>//g' bookmarks_14-7-13.html  > $$.html
 sendmail --help
@@ -1036,6 +1050,7 @@ which ls
 whichis ls
 while true do cat chgd.sh done;
 while true do cat chgd.sh done;  l
+wxit
 xargs
 xargs --help
 yum install man
