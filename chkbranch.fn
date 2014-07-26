@@ -1,0 +1,36 @@
+#!/bin/sh
+
+currentb()
+{
+cd $1
+git branch | grep '^*' | awk '{print $2}'
+}
+
+otherb()
+{
+cd $1
+git branch | grep -v '^*'
+}
+
+allb()
+{
+currentb $1
+otherb $1
+}
+
+fileinb()
+{
+CURB=$(currentb $1)
+echo
+
+for BRN in $(allb $1)
+do
+git checkout $BRN
+echo
+ls -al
+prnline
+done
+
+git checkout $CURB
+
+}
