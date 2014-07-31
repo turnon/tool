@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. cleanicon.fn
+
 checkerr(){
 	if [ $? -ne 0 ]; then
 		exit 1
@@ -15,7 +17,7 @@ checkerr
 # clean icon
 for f in $fl
 do
-	sed -e  's/data\:.*\">/\">/' $f > $$.htmltmp
+	cleanicon $f > $$.htmltmp
 	mv -v $$.htmltmp $f
 done
 

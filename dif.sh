@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# show diff with compressed bookmark
+
 main(){
 bmlog=$(git log --oneline --reverse | grep '[0-9]$'  | awk '{print $1}')
 

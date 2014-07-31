@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cleanicon()
+{
+	sed -e  's/data\:.*\">/\">/' $1
+}
