@@ -20,19 +20,19 @@ echo $NEW_SIZE $NEW_NAME
 done
 }
 
-getsort()
+sortbysize()
 {
 sort -k2n,2 -k1n,1
 }
 
-tricol()
+format()
 {
-while read SIZE1 SZIE2 NAME
+while read SIZE1 SIZE2 NAME
 do
-NEW_SZIE2=$(decode "$SZIE2")
-printf '%6.1f %1s  %-20s\n' $SIZE1 $NEW_SZIE2 "$NAME"
+NEW_SIZE2=$(decode "$SIZE2")
+printf '%6.1f %1s  %-20s\n' $SIZE1 $NEW_SIZE2 "$NAME"
 done
 }
 
 ## main
-du "$([ -z "$1" ] && echo '.' || echo "$1")"/* -h --max-depth=0 | humansize | getsort | tricol
+du "$([ -z "$1" ] && echo '.' || echo "$1")"/* -h --max-depth=0 | humansize | sortbysize | format
