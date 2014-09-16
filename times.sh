@@ -13,7 +13,9 @@ done
 { run ; } 2>>tmp.$$
 
 grep '^real' tmp.$$ \
-| sed 's/m/ & /' | sed 's/s/ & /' \
-| sort -k2n,2 -k4n,4
+| sed 's/real//' | sed 's/[ms]/ /g' \
+| cat -n \
+| sort -k2n,2 -k3n,3 \
+| cat -n
 
 rm tmp.$$
