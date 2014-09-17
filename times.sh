@@ -6,12 +6,14 @@ expr "$cmd1" + 1 >/dev/null 2>&1 \
 && { times=$cmd1 ; cmd=$cmd2 ; } \
 || { times=10 ; cmd="$cmd1 $cmd2" ; }
 
+echo $cmd >cmd.$$
+
 run()
 {
 while [ "$times" -ne 0 ]
 do
 times=$( expr "$times" - 1 )
-time $cmd
+time cmd.$$
 done
 }
 
@@ -27,4 +29,4 @@ grep '^real' tmp.$$ \
  {sum_mi=sum_mi+$3;sum_se=sum_se+$4} \
   END {sum_mi=sum_mi/NR;sum_se=sum_se/NR;printf "\naverage : %2d m %6.3f s\n",sum_mi,sum_se}'
 
-rm tmp.$$
+rm cmd.$$ tmp.$$
