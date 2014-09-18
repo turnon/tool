@@ -1,10 +1,8 @@
 #!/bin/sh
 
-read cmd1 cmd2
+expr "$1" + 1 >/dev/null 2>&1 && times=$1 || times=1
 
-expr "$cmd1" + 1 >/dev/null 2>&1 \
-&& { times=$cmd1 ; cmd=$cmd2 ; } \
-|| { times=10 ; cmd="$cmd1 $cmd2" ; }
+read cmd
 
 echo $cmd >cmd.$$
 
