@@ -3,9 +3,10 @@
 #format
 fmt()
 {
-while read a b c d e f g
+while read acc dat cur amt1 amt2 amt3 ds1 ds2 ds3 ds4 ds5 ds6
 do
-printf '%16s %6s %8s %9.2f %9.2f %9.2f %-50s\n' "$a" "${b:2:2}""${b:5:2}""${b:8:2}" "$c" "$d" "$e" "$f" "$g"
+printf '%16s %6s %8s %9.2f %9.2f %9.2f %-50s\n' \
+"$acc" "${dat:2:2}""${dat:5:2}""${dat:8:2}" "$cur" "$amt1" "$amt2" "$amt3" "$ds1 $ds2 $ds3 $ds4 $ds5 $ds6"
 done
 }
 
