@@ -1,18 +1,11 @@
 #!/bin/sh
 
-# date format yyyymmdd
-dat()
-{
-echo "${1:2:2}""${1:5:2}""${1:8:2}"
-}
-
 #format
 fmt()
 {
 while read a b c d e f g
 do
-b=$(dat "$b")
-printf '%16s %6s %8s %9.2f %9.2f %9.2f %-50s\n' "$a" "$b" "$c" "$d" "$e" "$f" "$g"
+printf '%16s %6s %8s %9.2f %9.2f %9.2f %-50s\n' "$a" "${b:2:2}""${b:5:2}""${b:8:2}" "$c" "$d" "$e" "$f" "$g"
 done
 }
 
