@@ -7,19 +7,6 @@ done
 
 exit
 
-while read -a a
-do
-cols=$(echo "${a[@]}" | awk '{print NF}')
-i=0
-while [ "$i" -lt "$cols" ]
-do
-echo ${#a[$i]}
-i=$(expr "$i" + 1)
-done | xargs
-done
-
-exit
-
 cols="$1"
 
 genpara()
