@@ -1,6 +1,7 @@
 #!/bin/sh
 
 linenum=0
+fieldnum=0
 
 store()
 {
@@ -8,6 +9,8 @@ while read line
 do
 lines[$linenum]="$line"
 linenum=$(expr "$linenum" + 1)
+fieldnumtmp=$(echo "$line" | awk '{print NF}')
+fieldnum=$([ "$fieldnumtmp" -gt "$fieldnum" ] && echo "$fieldnumtmp" || echo "$fieldnum" )
 done
 }
 
