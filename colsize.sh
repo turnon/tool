@@ -1,26 +1,6 @@
 #!/bin/sh
 
-store()
-{
-i=0
-
-while read line
-do
-lines[$i]="$line"
-i=$(expr "$i" + 1)
-done
-}
-
-flow()
-{
-k=0
-
-while [ "$k" -lt "$i" ]
-do
-echo ${lines[$k]}
-k=$(expr "$k" + 1)
-done
-}
+. storeflow.fn
 
 store
 
@@ -30,6 +10,10 @@ flow \
 | awk '{if(NF>mnf){mnf=NF};for(i=1;i<=NF;i++) if($i>a[i]){a[i]=$i}} \
 END{for(k=1;k<=mnf;k++) if(k==mnf){printf "%.0f\n",a[k]}else{printf "%.0f ",a[k]}}' \
 )
+
+echo $lens
+
+exit
 
 cols=$(echo $lens | wc -w)
 
