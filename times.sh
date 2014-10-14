@@ -10,10 +10,13 @@ echo $cmd >cmd.$$
 
 run()
 {
-while [ "$times" -ne 0 ]
+i=1
+
+while [ "$times" -ge "$i" ]
 do
-times=$( expr "$times" - 1 )
+printf "\n# %d\n\n" "$i"
 time cmd.$$
+i=$(expr "$i" + 1 )
 done
 }
 
