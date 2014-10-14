@@ -11,10 +11,7 @@ awk '{sub($1,"");print $0}' "$1"
 
 alignleft()
 {
-while read noheadsp
-do
-echo $noheadsp
-done <"$1"
+sed 's/^[ ]*//' "$1"
 }
 
 # main
