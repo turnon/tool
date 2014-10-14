@@ -2,13 +2,14 @@
 
 . storeflow.fn
 
-store
+store strf.$$
 
 m=1
 
 while [ "$m" -le "$fieldnum" ]
 do
-flow \
-| awk -v n=$m '{printf "%s ",$n} END{printf "\n",""}'
+awk -v n=$m '{printf "%s ",$n} END{printf "\n",""}' strf.$$
 m=$(expr "$m" + 1 )
 done
+
+rm strf.$$
