@@ -7,20 +7,9 @@ store()
 {
 while read line
 do
-lines[$linenum]="$line"
+echo "$line">>"$1"
 linenum=$(expr "$linenum" + 1)
 fieldnumtmp=$(echo "$line" | awk '{print NF}')
 fieldnum=$([ "$fieldnumtmp" -gt "$fieldnum" ] && echo "$fieldnumtmp" || echo "$fieldnum" )
-done
-}
-
-flow()
-{
-curline=0
-
-while [ "$curline" -lt "$linenum" ]
-do
-echo ${lines[$curline]}
-curline=$(expr "$curline" + 1)
 done
 }
