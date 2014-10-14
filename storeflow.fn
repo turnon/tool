@@ -1,15 +1,14 @@
 #!/bin/sh
 
+store()
+{
 linenum=0
 fieldnum=0
 
-store()
-{
 while read line
 do
 echo "$line">>"$1"
-linenum=$(expr "$linenum" + 1)
-fieldnumtmp=$(echo "$line" | awk '{print NF}')
-fieldnum=$([ "$fieldnumtmp" -gt "$fieldnum" ] && echo "$fieldnumtmp" || echo "$fieldnum" )
 done
+
+echo $(awk '{if(NF>maxnf){maxnf=NF}} END{print NR,maxnf}' "$1")
 }
