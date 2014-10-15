@@ -6,6 +6,8 @@
 
 store histgdata.$$ >/dev/null
 
+[ -z "$1" ] && reduce=1 || reduce="$1"
+
 {
 lentmp=0
 len=0
@@ -29,11 +31,14 @@ echo
 
 i=0
 
+rows=$(expr "$rows" / "$reduce")
+
 while [ "$i" -le "$rows" ]
 do
 while read y x
 do
-[ "$i" -eq "$y" ] && printf '%'"$len"'s' "$y" ||  { [ "$i" -lt "$y" ] && printf '%'"$len"'s' "." || printf '%'"$len"'s' "" ; }
+rdy=$(expr "$y" / "$reduce")
+[ "$i" -eq "$rdy" ] && printf '%'"$len"'s' "$y" ||  { [ "$i" -lt "$rdy" ] && printf '%'"$len"'s' "." || printf '%'"$len"'s' "" ; }
 done <histgdata.$$
 echo
 i=$(expr "$i" + 1)
