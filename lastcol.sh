@@ -9,11 +9,6 @@ rmfstcol()
 awk '{sub($1,"");print $0}' "$1"
 }
 
-alignleft()
-{
-sed 's/^[ ]*//' "$1"
-}
-
 # main
 store lstcl.$$ >/dev/null
 
@@ -24,6 +19,6 @@ mv lstcltmp.$$ lstcl.$$
 col=$(expr "$col" - 1)
 done
 
-alignleft lstcl.$$
+alignleft.sh lstcl.$$
 
 rm lstcl.$$
