@@ -4,6 +4,8 @@
 
 . storeflow.fn
 
+
+
 store histgdata.$$ >/dev/null
 
 [ -z "$1" ] && reduce=1 || reduce="$1"
@@ -22,6 +24,8 @@ xlentmp=$(echo $x | wc -c)
 [ "$y" -gt "$rows" ] && rows="$y"
 done <histgdata.$$
 
+graph=$(printf '%'"$(expr $len - 2)"'s' " " | tr ' ' '_')
+
 while read y x
 do
 printf '%'"$len"'s' "$x"
@@ -38,7 +42,7 @@ do
 while read y x
 do
 rdy=$(expr "$y" / "$reduce")
-[ "$i" -eq "$rdy" ] && printf '%'"$len"'s' "$y" ||  { [ "$i" -lt "$rdy" ] && printf '%'"$len"'s' "." || printf '%'"$len"'s' "" ; }
+[ "$i" -eq "$rdy" ] && printf '%'"$len"'s' "$y" ||  { [ "$i" -lt "$rdy" ] && printf '%'"$len"'s' "$graph" || printf '%'"$len"'s' "" ; }
 done <histgdata.$$
 echo
 i=$(expr "$i" + 1)
