@@ -2,7 +2,10 @@
 
 aleft()
 {
-sed 's/^[ ]*//'
+while read line
+do
+echo $line
+done
 }
 
-[ -f "$1" ] && aleft "$1" || aleft
+[ -f "$1" ] && cat "$1" | aleft || aleft
