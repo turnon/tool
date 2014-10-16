@@ -22,11 +22,11 @@ done
 do
 echo "$begin"
 begin=$(expr "$begin" + "$step")
-done
+done && exit
 
 # desc
 [ "$begin" -gt "$end" ] && while [ "$begin" -ge "$end" ]
 do
 echo "$begin"
 begin=$(expr "$begin" + "$step")
-done
+done && exit
