@@ -17,12 +17,14 @@ done
 [ "$step" -gt 0 ] && [ "$begin" -gt "$end" ] && echo 'exceed' && exit
 [ "$step" -lt 0 ] && [ "$begin" -lt "$end" ] && echo 'exceed nega' && exit
 
+# asc
 [ "$begin" -lt "$end" ] && while [ "$begin" -le "$end" ]
 do
 echo "$begin"
 begin=$(expr "$begin" + "$step")
 done
 
+# desc
 [ "$begin" -gt "$end" ] && while [ "$begin" -ge "$end" ]
 do
 echo "$begin"
