@@ -2,6 +2,14 @@
 
 interval=250000
 
+while getopts i:d: op
+do
+case $op in
+i) interval=$(expr "$interval" \* $OPTARG );;
+d) interval=$(expr "$interval" / $OPTARG );;
+esac
+done
+
 # set interval
 # each charater
 # wait
