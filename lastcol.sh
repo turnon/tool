@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. storeflow.fn
-
 col="$1"
 
 rmfstcol()
@@ -10,7 +8,7 @@ awk '{sub($1,"");print $0}' "$1"
 }
 
 # main
-store lstcl.$$ >/dev/null
+awk '{print $0}' > lstcl.$$
 
 while [ "$col" -gt 1 ]
 do
