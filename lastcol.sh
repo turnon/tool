@@ -2,21 +2,4 @@
 
 col="$1"
 
-rmfstcol()
-{
-awk '{sub($1,"");print $0}' "$1"
-}
-
-# main
-awk '{print $0}' > lstcl.$$
-
-while [ "$col" -gt 1 ]
-do
-rmfstcol lstcl.$$ >lstcltmp.$$
-mv lstcltmp.$$ lstcl.$$
-col=$(expr "$col" - 1)
-done
-
-alignleft.sh lstcl.$$
-
-rm lstcl.$$
+awk -v c=$col '{for(i=c-1;i>0;i--){gsub($i,"")};print $0}' | alignleft.sh
