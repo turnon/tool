@@ -4,11 +4,12 @@
 
 cd $1
 
-for f in $(ls bookm* 2>/dev/null)
+ls --full-time bookm* \
+| awk '{print $7,$8,$9,$10,$11}' \
+| while read d1 d2 d3 d4 name
 do
-newname=$(echo $f | sed 's/bookmarks_//' | tr '_'  '-')
-orgdate=$(echo $newname | cut -d. -f1)
-cleanicon $f >$newname
-touch $newname -m -d $orgdate
-rm -v $f
+newname="$(echo $name | sed 's/[^0-9]/ /g' | awk '{printf "%2.0f%2.0f%2.0f\n",$1,$2,$3}')"'.html'
+cleanicon $name >$newname
+touch $newname -m -d "$d1 $d2 $d3 $d4"
+rm -v $name
 done
