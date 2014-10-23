@@ -4,7 +4,7 @@
 
 main()
 {
-all=$(ls -rt)
+all=$(ls)
 pre=$(echo $all | cut -d' ' -f1)
 oth=$(echo $all | cut -d' ' -f2- )
 
