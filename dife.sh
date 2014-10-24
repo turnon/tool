@@ -2,20 +2,15 @@
 
 # show diff with non-compressed bookmark
 
-main()
-{
-all=$(ls)
-pre=$(echo $all | cut -d' ' -f1)
-oth=$(echo $all | cut -d' ' -f2- )
-
-for nex in $oth
+ls $1/*.html \
+| prevcurr.sh \
+| while read pre
 do
+read nex
 diff $pre $nex | grep 'HREF' >difdetail.$$
 rsub=$(grep -c '^<' difdetail.$$ )
 radd=$(grep -c '^>' difdetail.$$ )
-echo $nex $rsub $radd
-pre=$nex
+echo ${nex##*/} $rsub $radd
 done
-}
 
-cd $1 && main && rm -f difdetail.$$
+rm -f difdetail.$$
