@@ -1,11 +1,15 @@
 #!/bin/sh
 
-toscan=$([ -z "$1" ] && echo "." || echo "${1%%/}")
+toscan=$1
+
+[ -z "$toscan" ] && toscan=$(pwd)
+
+toscan=${toscan%%/}
 
 p=${toscan%/}
 p=${p##*/}
 
-ls -p "$toscan" \
+ls -Ap "$toscan" \
 | while read f
 do
 echo "$p"'/'"$f"
