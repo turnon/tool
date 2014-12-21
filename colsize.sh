@@ -1,10 +1,8 @@
 #!/bin/sh
 
-. storeflow.fn
+awk '{print $0}' > colsiz.$$
 
-read lines cols<<EOF
-$(store colsiz.$$)
-EOF
+cols=$(awk '{print NF}' colsiz.$$ | sort -n | tail -n1)
 
 m=1
 
