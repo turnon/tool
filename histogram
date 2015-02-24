@@ -1,0 +1,40 @@
+#!/bin/perl
+
+$zoom=shift @ARGV;
+
+$zoom=1 unless $zoom;
+
+while(<>){
+	($count,$item)=split;
+	$map{"$item"}=$count;
+	push @list,$item;
+	$max=$count if $max<$count;
+	$item_len_tmp=length $item;
+	$bar_len=$item_len_tmp if $bar_len<$item_len_tmp;
+}
+
+$count_len=length $max;
+$bar_len=$count_len if $bar_len<$count_len;
+
+for(reverse (1..$max/$zoom+1)){
+	$high=$_;
+	for(@list){
+		if($high<=$map{"$_"}/$zoom){
+			print '_' x $bar_len,' ';
+		}elsif($high-1<=$map{"$_"}/$zoom){
+			printf '%'."$bar_len".'d ',$map{"$_"};
+		}else{
+			print ' ' x $bar_len,' ';
+		}
+	}
+	print "\n";
+}
+
+for(@list){
+	printf '%'."$bar_len".'s ',"$_";
+}
+
+print "\n";
+
+
+
