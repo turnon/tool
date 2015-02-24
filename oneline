@@ -1,0 +1,8 @@
+#!/bin/perl
+
+while(<STDIN>){
+chomp;
+print "$_"." ";
+}
+
+print "\n";
