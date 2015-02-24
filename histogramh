@@ -1,0 +1,18 @@
+#!/bin/perl
+
+$zoom=shift @ARGV;
+
+$zoom=1 unless $zoom;
+
+while(<>){
+	($count,$item)=split;
+	$map{"$item"}=$count;
+	push @list,$item;
+	$it_len_tmp=length $item;
+	$max_it_len=$it_len_tmp if $max_it_len<$it_len_tmp; 
+}
+
+for(@list){
+	printf "%"."$max_it_len"."s : %s %d\n",$_,'/' x ($map{"$_"}/$zoom),$map{"$_"};
+}
+
