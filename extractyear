@@ -1,0 +1,11 @@
+#!/bin/perl
+
+while(<>){
+  chomp;
+  if(/[^\d]([\d]{4})[^\d]/g){
+    $y = $1;
+  }else{
+    $y=" " x 4;
+  }
+  print "$y : $_\n";
+}
