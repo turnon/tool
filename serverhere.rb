@@ -8,8 +8,10 @@ rack_proc = lambda do |env|
 	if File.exists? path
 	  if File.directory? path
 	    [200, {'Content-Type' => 'text/plain'}, [`ls -al #{path}`] ]
-	  else
+	  elsif File.extname(path) == '.html'
 	    [200, {'Content-Type' => 'text/html'}, File.open(path, File::RDONLY)]
+	  else
+	    [200, {'Content-Type' => 'text/plain'}, [File.read(path)]]
 	  end
 	else
 	  [404, {'Content-Type' => 'text/plain'}, ["#{path} does not exist"] ]
