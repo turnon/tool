@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
 
-log = `git log --oneline --graph | cat -n`
+log_cmd = "git log --oneline --graph | cat -n"
 
 if ARGV.empty?
-  puts log
+  system(log_cmd + ' | less')
   exit
 end
+
+log = `#{log_cmd}`
 
 line_no = ARGV.shift
 
@@ -24,8 +26,8 @@ log.each_line do |l|
   after = id if no == line_no
 end
 
-cmd = "git diff #{before} #{after} --color"
+diff_cmd = "git diff #{before} #{after} --color"
 
-system cmd if before
+system diff_cmd if before
 
-puts cmd
+puts diff_cmd
