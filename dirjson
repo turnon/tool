@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+class File
+
+  class Stat
+    def to_hash(*attrs)
+      h = {}
+      attrs.each do |attr|
+        h[attr] = self.send(attr)
+      end
+      h      
+    end
+  end
+  
+end
+
+class Dir
+
+  def self.vglob(path)
+  
+    filelist = []
+    
+    Dir.foreach(path) do |f|
+      next if f == '.' or f == '..'
+      filepath = File.join(path, f)
+      filestat = File.stat(filepath)
+      h = { name: f }.merge(filestat.to_hash(:atime, :ctime, :mtime))      
+      if File.directory? filepath
+        list = vglob(filepath)
+        dsize = list.map{ |e| e[:size] }.reduce(:+)
+        filelist << h.merge({type: :d, size: dsize, contains: list})
+      else
+        filelist << h.merge({type: :f, size: filestat.size})
+      end
+    end
+    
+    filelist
+
+  end
+
+end
+
+require 'json'
+
+path = ARGV.shift
+
+puts Dir.vglob(path).to_json
