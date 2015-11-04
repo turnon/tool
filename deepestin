@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+class Dir
+
+  def self.deepest(d)
+  
+    deepest = Proc.new do |paths, depth|
+      
+      # get all files in all dirs.
+      # if no file is found, these dirs are deepest
+      files = paths.map{ |path| Dir.glob(File.join(path, '*')) }.flatten
+      return [paths, depth+1] if files.count == 0
+      
+      # these files are deepest when none of them is dir
+      dirs = files.select { |f| File.directory? f }
+      return [files, depth+1] if dirs.count == 0
+      
+      # if any file is dir, it coild be deeper
+      deepest.call(dirs, depth+1)
+      
+    end
+    
+    # start process
+    deepest.call [d], 0
+    
+  end  
+  
+end
+
+path = ARGV.shift
+
+puts Dir.deepest(path)
