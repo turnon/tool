@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+until ARGV.empty?
+  f = ARGV.shift
+  lines = File.readlines f
+  puts "#{lines.any?{|l| l.chars.length != l.bytes.length} ? 'X' : ' '} #{f}"
+end
