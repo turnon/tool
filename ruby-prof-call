@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cat `which $1` >> tmp.$$.rb
+
+shift
+
+ruby-prof -p call_stack -f call.$(date +%Y%m%d-%H%M%S).html tmp.$$.rb $@
+
+rm tmp.$$.rb
