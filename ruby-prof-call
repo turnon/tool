@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# cmd or plain src
+
 if [ -e $1 ]
 then
   src=$1
@@ -11,4 +13,24 @@ fi
 
 shift
 
-ruby-prof -p call_stack -f $filename.$(date +%Y%m%d-%H%M%S).html $src $@
+# create a tmp src file, bring opts to it
+
+tmpsrc="tmp.$$.rb"
+
+echo "#!/usr/bin/env ruby" >$tmpsrc
+
+while [ "$#" -gt 0 ]
+do
+  echo "ARGV.push '$1'"
+  shift
+done >>$tmpsrc
+
+cat $src >>$tmpsrc
+
+# profile
+
+ruby-prof -p call_stack -f $filename.$(date +%Y%m%d-%H%M%S).html $tmpsrc
+
+# clean
+
+rm $tmpsrc
