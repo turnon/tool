@@ -1,9 +1,14 @@
 #!/bin/sh
 
-cat `which $1` >> tmp.$$.rb
+if [ -e $1 ]
+then
+  src=$1
+  filename=$(basename $1)
+else
+  src=$(which $1)
+  filename=$1
+fi
 
 shift
 
-ruby-prof -p call_stack -f call.$(date +%Y%m%d-%H%M%S).html tmp.$$.rb $@
-
-rm tmp.$$.rb
+ruby-prof -p call_stack -f $filename.$(date +%Y%m%d-%H%M%S).html $src $@
