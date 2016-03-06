@@ -8,7 +8,7 @@ do
   else
     find $1 -type f | while read p
     do
-      f=$(basename $p)
+      f=$(basename "$p")
       echo ${f##*.}
     done
   fi
