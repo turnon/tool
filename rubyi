@@ -1,0 +1,15 @@
+#/bin/sh
+
+if [ "--help" == "$1" ] || [ -z "$1" ]
+then
+  echo "usage: rubin GEM/SRC/PATH ARGV"
+  exit
+fi
+
+lib="$1/lib"
+
+bin=`ls $1/bin/*`
+
+shift
+
+ruby -I "$lib" "$bin" $@
