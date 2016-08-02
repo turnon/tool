@@ -2,7 +2,7 @@
 
 if [ "--help" == "$1" ] || [ -z "$1" ]
 then
-  echo "usage: rubin GEM/SRC/PATH ARGV"
+  echo "usage: rubyi GEM/SRC/PATH ARGV"
   exit
 fi
 
