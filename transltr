@@ -2,13 +2,7 @@
 
 require 'rest-client'
 require 'json'
-
-def timer
-  a = Time.now
-  yield
-  b = Time.now
-  puts "in #{b - a} seconds"
-end
+require_relative 'timer'
 
 URL = 'http://www.transltr.org/api/translate'
 

@@ -1,0 +1,58 @@
+#!/bin/env ruby
+
+require 'rest-client'
+require 'json'
+require_relative 'timer'
+
+class Query
+
+  URL = 'http://api.pearson.com/v2/dictionaries/ldoce5/entries'
+
+  attr_reader :resp, :json, :word
+
+  def initialize word
+    @word = word
+    @resp = RestClient.get URL, {params: {headword: word}}
+  end
+
+  def to_str
+    "#{word} [#{ipa}]\n#{explains.map{|ex| '-> ' + ex}.join("\n")}"    
+  end
+  
+  private
+
+  def ipa
+    results[0]['pronunciations'][0]['ipa']
+  rescue
+    nil
+  end
+
+  def json
+    JSON.parse(resp.body)
+  end
+
+  def results
+    json['results']
+  end
+
+  def explains
+    results.map do |rs|
+      rs['senses'][0]['definition'][0]
+    end
+  rescue
+    []
+  end
+
+end
+
+# main
+
+timer do
+
+  result = ARGV.map do |arg|
+    Query.new(arg)#.to_s
+  end
+
+  puts result.join("\n\n")
+
+end
