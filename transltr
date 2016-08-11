@@ -1,0 +1,30 @@
+#!/bin/env ruby
+
+require 'rest-client'
+require 'json'
+
+def timer
+  a = Time.now
+  yield
+  b = Time.now
+  puts "in #{b - a} seconds"
+end
+
+URL = 'http://www.transltr.org/api/translate'
+
+def query word
+  resp = RestClient.get URL, {params: {from: 'en', to: 'zh-CHS', text: word}}
+  JSON.parse(resp.body)['translationText']
+end
+
+# main
+
+timer do
+
+  result = ARGV.map do |arg|
+    query arg
+  end
+
+  puts result.join(' ')
+
+end
