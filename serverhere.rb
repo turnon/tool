@@ -25,15 +25,30 @@ class FileWrapper
   end
 end
 
-class App
-  def call env
-    path = File.join('.', env['REQUEST_PATH'])
-    if_mod_since = env['HTTP_IF_MODIFIED_SINCE']
+class EnvInspector
 
-    puts
+  def initialize app
+    @app = app
+  end
+
+  def call env
+    puts env.sort.map{|k,v| "#{green(k)} => #{v}"}.join("\n")
+    @app.call env
+  end
+
+  def green str
+    "\e[32m#{str}\e[0m"
+  end
+end
+
+class App
+
+  def call env
+    req = Rack::Request.new env
+    path = File.join('.', req.path_info)
 
     if not File.exists? path
-      return [404, {'Content-Type' => 'text/plain'}, ["#{file} does not exist"] ]
+      return [404, {'Content-Type' => 'text/plain'}, ["#{path} does not exist"] ]
     end
 
     if File.directory? path
@@ -42,6 +57,7 @@ class App
 
     file = FileWrapper.new path
 
+    if_mod_since = req.get_header 'HTTP_IF_MODIFIED_SINCE'
     if if_mod_since and file.last_mod == if_mod_since
       return [304, {}, []]
     end
@@ -57,4 +73,10 @@ end
 
 public_ip = Socket.ip_address_list.select{ |ad| ad.ipv4? && ad.getnameinfo[0] != 'localhost' }[0].ip_address
 
-Rack::Handler::WEBrick.run App.new, :Port => 9292, :Host => public_ip
+app = Rack::Builder.new {
+  use Rack::ContentLength
+  use EnvInspector
+  run App.new
+}
+
+Rack::Handler::WEBrick.run app, :Port => 9292, :Host => public_ip
