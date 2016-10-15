@@ -28,7 +28,7 @@ class Query
   end
 
   def json
-    JSON.parse(resp.body)
+    @json ||= JSON.parse(resp.body)
   end
 
   def results
@@ -50,7 +50,7 @@ end
 timer do
 
   result = ARGV.map do |arg|
-    Query.new(arg)#.to_s
+    Query.new(arg)
   end
 
   puts result.join("\n\n")
