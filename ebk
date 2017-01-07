@@ -1,0 +1,12 @@
+#!/bin/sh
+
+usage() {
+cat<<EOF
+Usage: ebk book_name
+search book name in ~/ebk_dump/dump.txt
+EOF
+}
+
+[ -z $1 ] && usage && exit
+
+grep -i $1 ~/ebk_dump/dump.txt
