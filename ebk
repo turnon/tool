@@ -9,4 +9,19 @@ EOF
 
 [ -z $1 ] && usage && exit
 
-grep -i $1 ~/ebk_dump/dump.txt
+query="grep -i $1 ~/ebk_dump/dump.txt"
+cmd_file='/tmp/ebk.tmp.sh'
+
+shift
+
+until [ -z $1 ]
+do
+  query="$query | grep -i $1"
+  shift
+done
+
+echo $query > $cmd_file
+
+sh $cmd_file
+
+rm $cmd_file
