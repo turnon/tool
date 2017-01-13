@@ -7,6 +7,13 @@ search book name in ~/ebk_dump/dump.txt
 EOF
 }
 
+format() {
+  while read dat size file
+  do
+    printf "%s %5s %s\n" "$dat" "$size" "$file"
+  done
+}
+
 [ -z $1 ] && usage && exit
 
 query="grep -i $1 ~/ebk_dump/dump.txt"
@@ -22,6 +29,6 @@ done
 
 echo $query > $cmd_file
 
-sh $cmd_file
+sh $cmd_file | format
 
 rm $cmd_file
