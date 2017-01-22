@@ -1,0 +1,58 @@
+#!/bin/env ruby
+
+def usage
+  puts "Usage: headless -nNUM file1 file2 ...\nSomething like tail -n +NUM"
+  exit
+end
+
+def ARGV.n
+  return @n if @n
+  input = []
+  until empty?
+    arg = shift
+    if m = /-n(\d*)/.match(arg)
+      @n = (m[1].empty? ? shift : m[1])
+    else
+      input << arg
+    end
+  end
+  input.each{|inp| push inp}
+  usage unless /^\d+$/.match @n
+  @n = @n.to_i
+end
+
+class << ARGF
+  def name
+    f = self.file
+    f.is_a?(File) ? f.path : 'stdin'
+  end
+
+  def first?
+    !@current
+  end
+
+  def another?
+    @current ||= ARGF.file
+    bool = @current != ARGF.file
+    @current = ARGF.file
+    bool
+  end
+end
+
+# main
+ignore = ARGV.n
+
+ARGF.each_line do |line|
+  puts "==> #{ARGF.name} <==" if ARGF.first?
+
+  if ARGF.another?
+    ignore = ARGV.n
+    puts "\n==> #{ARGF.name} <=="
+  end
+  
+  if ignore == 0
+    puts line
+  else
+    ignore = ignore.pred
+  end
+end
