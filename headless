@@ -27,10 +27,6 @@ class << ARGF
     f.is_a?(File) ? f.path : 'stdin'
   end
 
-  def first?
-    !@current
-  end
-
   def another?
     @current ||= ARGF.file
     bool = @current != ARGF.file
@@ -39,20 +35,28 @@ class << ARGF
   end
 end
 
+output = Hash.new do |h, k|
+  h[k] = []
+end
+
+def output.flush
+  return values if keys.count == 1
+  map do |file_name, lines|
+    "==> #{file_name} <==\n#{lines.join}"    
+  end.join("\n")
+end
+
 # main
 ignore = ARGV.n
 
 ARGF.each_line do |line|
-  puts "==> #{ARGF.name} <==" if ARGF.first?
-
-  if ARGF.another?
-    ignore = ARGV.n
-    puts "\n==> #{ARGF.name} <=="
-  end
+  ignore = ARGV.n if ARGF.another?
   
   if ignore == 0
-    puts line
+    output[ARGF.name] << line
   else
     ignore = ignore.pred
   end
 end
+
+puts output.flush
