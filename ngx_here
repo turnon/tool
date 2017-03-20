@@ -1,0 +1,30 @@
+# start if not started
+
+service nginx status || sudo systemctl start nginx
+
+# check port
+
+port=11111
+sudo iptables -L -n | grep $port || echo "port $port not open"
+
+# write config
+
+tmp_conf='/tmp/ngx_here.conf.tmp'
+
+cat <<EOF > $tmp_conf
+server {
+  listen $port default_server;
+  root   `pwd`;
+  location / {
+    autoindex on;
+  }
+}
+EOF
+
+sudo cp $tmp_conf /etc/nginx/conf.d/ngx_here.conf
+
+# reload config
+
+pid=`ps -C nginx -f | head -n2 | tail -n1 | awk '{print $2}'`
+
+sudo kill -HUP $pid
