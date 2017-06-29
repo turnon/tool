@@ -1,0 +1,9 @@
+#!/bin/sh
+
+seq 50 \
+  | while read f;do rake test 2>/dev/null;done \
+  | grep Finish \
+  | sort \
+  | awk '{print $3}' \
+  | sed 's/s,//' \
+  | ruby -e 'puts 50.times.map{gets.to_f}.sort.slice(5, 40).sum / 40'
