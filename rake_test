@@ -6,4 +6,4 @@ seq 50 \
   | sort \
   | awk '{print $3}' \
   | sed 's/s,//' \
-  | ruby -e 'puts 50.times.map{gets.to_f}.sort.slice(5, 40).sum / 40'
+  | ruby -e 'samples = 60.times.map{gets.to_f}.sort; puts "#{samples}\n-----\n#{samples.slice(15, 30).sum / 30}"'
