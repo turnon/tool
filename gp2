@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# example:
+# $> gp2 master production
+
+old_root=$1
+new_root=$2
+
+cur_br=`git branch | grep '^*' | awk '{print $2}'`
+
+git checkout $new_root
+git checkout -b "${cur_br}_to_${new_root}"
+
+commits=`git cherry $old_root $cur_br | awk '{print $2}'`
+
+git cherry-pick $commits
