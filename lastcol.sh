@@ -1,5 +1,3 @@
 #!/bin/sh
 
-col="$1"
-
-awk -v c=$col '{for(i=c-1;i>0;i--){$i=""};print $0}' | alignleft.sh
+awk -v c="${1:-1}" '{for(i=NF-c;i>0;i--){$i=""};sub(/^\s+/, "", $0);print $0}'
