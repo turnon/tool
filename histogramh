@@ -1,4 +1,4 @@
-#!/bin/perl
+#!/usr/bin/env perl
 
 $zoom=shift @ARGV;
 
@@ -9,7 +9,7 @@ while(<>){
 	$map{"$item"}=$count;
 	push @list,$item;
 	$it_len_tmp=length $item;
-	$max_it_len=$it_len_tmp if $max_it_len<$it_len_tmp; 
+	$max_it_len=$it_len_tmp if $max_it_len<$it_len_tmp;
 }
 
 for(@list){
