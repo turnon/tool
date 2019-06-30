@@ -1,0 +1,15 @@
+#!/bin/sh
+
+while [ "$1" != "-i" ] && [ "$1" != "" ]; do
+  docker rm "$1"
+  shift
+done
+
+if [ "$1" = "-i" ]; then
+  shift
+fi
+
+while [ "$1" != "" ]; do
+  docker ps -a | awk '{print $1, $2}' | grep "$1$" | awk '{print $1}' | xargs docker rm
+  shift
+done
