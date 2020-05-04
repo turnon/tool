@@ -33,6 +33,10 @@ class Bookmark
     def path_str
       @path_str ||= @path.size == 1 ? '/' : ('/' + @path[1..-1].map(&:name).join('/'))
     end
+
+    def host
+      @host ||= URI.parse(href).host rescue nil
+    end
   end
 
   def initialize(argf)
@@ -51,7 +55,6 @@ class Bookmark
         @cates << c
       when /\s*<\/DL><p>/
         @cates.pop
-      else
       end
     end
   end
@@ -66,8 +69,18 @@ class Bookmark
     end
     @dup_names
   end
+
+  def favorite_hosts
+    @favorite_hosts ||= @entries.group_by(&:host).
+      map{ |host, entries| [host, entries.size] }.
+      select{ |h| h[1] > 1 }.
+      sort{ |h1, h2| h2[1] <=> h1[1] }.
+      to_h
+  end
 end
 
 bm = Bookmark.new(ARGF)
 
 pp bm.dup_names
+
+pp bm.favorite_hosts
