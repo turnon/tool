@@ -8,4 +8,4 @@ gem_pack="${gem_name}-${version}.gem"
 rm ${gem_pack}
 gem uninstall ${gem_name}
 gem build ${spec_name}
-gem install ./${gem_pack}
+gem install -N ./${gem_pack}
