@@ -13,4 +13,4 @@ do
     done
   fi
   shift
-done | sort | uniq
+done | sort | uniq -c | sort -h
