@@ -6,7 +6,7 @@ do
   then
     echo ${1##*.}
   else
-    find $1 -type f | while read p
+    find $1 -type f -not -path '*/.git/*' -not -name '.*' -name '*.*' | while read p
     do
       f=$(basename "$p")
       echo ${f##*.}
