@@ -16,7 +16,7 @@ require 'nokogiri'
 require 'uri'
 
 BASE_URL = 'https://rcc-ai-gateway-dashboard.api.rccchina.com/dashboard/usage-by-user'
-DAYS = 14
+DAYS = (ARGV[0] || 7).to_i
 NO_RECORD_TEXT = '没有使用记录'
 UNKNOWN_USER_TEXT = '用户不存在'
 RETRIES = 3
