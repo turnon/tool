@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 class File
-
   class Stat
     def to_hash(*attrs)
       h = {}
@@ -10,14 +9,11 @@ class File
       end
       h      
     end
-  end
-  
+  end  
 end
 
 class Dir
-
-  def self.vglob(path)
-  
+  def self.vglob(path)  
     filelist = []
     
     Dir.foreach(path) do |f|
@@ -27,7 +23,7 @@ class Dir
       h = { name: f }.merge(filestat.to_hash(:atime, :ctime, :mtime))      
       if File.directory? filepath
         list = vglob(filepath)
-        dsize = list.map{ |e| e[:size] }.reduce(:+)
+        dsize = list.map{ |e| e[:size] || 0 }.reduce(:+)
         filelist << h.merge({type: :d, size: dsize, contains: list})
       else
         filelist << h.merge({type: :f, size: filestat.size})
@@ -35,13 +31,10 @@ class Dir
     end
     
     filelist
-
   end
-
 end
 
 require 'json'
 
 path = ARGV.shift
-
 puts Dir.vglob(path).to_json
