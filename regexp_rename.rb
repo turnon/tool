@@ -1,9 +1,32 @@
 #!/usr/bin/env ruby
 
+def usage(msg = nil)
+  warn "error: #{msg}" if msg
+  warn <<~USAGE
+    Usage: #{File.basename($0)} [--do] <regexp> [replacement]
+
+    Rename files/dirs whose basename matches <regexp>.
+    Without --do it only prints the planned renames (dry run).
+
+    Examples:
+      #{File.basename($0)} '\\.jpeg$' .jpg
+      #{File.basename($0)} --do '^IMG_(\\d+)' 'img-\\1'
+  USAGE
+  exit 1
+end
+
 act = ARGV.delete "--do"
 
+usage 'missing <regexp> argument' if ARGV.empty?
+usage 'too many arguments' if ARGV.size > 2
+
 pattern_str = ARGV.shift
-pattern_raw = Regexp.new pattern_str
+
+begin
+  pattern_raw = Regexp.new pattern_str
+rescue RegexpError => e
+  usage "invalid regexp #{pattern_str.inspect}: #{e.message}"
+end
 pattern_wrap = Regexp.new "(#{pattern_str})"
 
 replacem = (ARGV.shift || '')
